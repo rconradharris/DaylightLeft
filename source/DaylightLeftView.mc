@@ -1,5 +1,5 @@
+using LocalTime;
 using MathExtra;
-using SunInfo;
 using Toybox.System;
 using Toybox.Time;
 using Toybox.WatchUi;
@@ -30,6 +30,7 @@ function getHMSStringFromSeconds(totalSeconds) {
 class DaylightLeftView extends WatchUi.SimpleDataField {
 	var BLANK_TIME = "--:--";
 	var computedSunriseAndSunset = false;
+	var today = null;
 	var sunriseSecs = null;
 	var sunsetSecs = null;
 	
@@ -45,18 +46,19 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 		var longitude = latLng[1];
 		//System.println("lat = " + latitude.toString() + " lng = " + longitude.toString());
 		
-		var today = Time.Gregorian.info(Time.today(), Time.FORMAT_SHORT);
-		//System.println("year = " + today.year + " month = " + today.month + " day = " + today.day);
+		today = Time.today();
+		var gToday = Time.Gregorian.info(today, Time.FORMAT_SHORT);
+		//System.println("year = " + gToday.year + " month = " + gToday.month + " day = " + gToday.day);
 		
 		var clockTime = System.getClockTime();
 		var localOffset = clockTime.timeZoneOffset / 3600.0;
 		//System.println("localOffset = " + localOffset);
 		
-		var riseAndSet = SunInfo.getSunriseAndSunsetSecs(today.year, today.month, today.day, latitude, longitude, localOffset, SunInfo.ZENITH_OFFICIAL);
+		var riseAndSet = SunInfo.getSunriseAndSunsetSecs(gToday.year, gToday.month, gToday.day, latitude, longitude, localOffset, SunInfo.ZENITH_OFFICIAL);
 		
 		sunriseSecs = riseAndSet[0];
 		sunsetSecs = riseAndSet[1];
-		System.println("sunriseSecs = " + sunriseSecs + " sunsetSecs = " + sunsetSecs);
+		//System.println("sunriseSecs = " + sunriseSecs + " sunsetSecs = " + sunsetSecs);
 		computedSunriseAndSunset = true;
     }
     
@@ -72,8 +74,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 		//System.println("timeZoneOffset" + clockTime.timeZoneOffset);
 
 		var secsUntilMidnight = nowSecs - todaySecs + clockTime.timeZoneOffset;
-		secsUntilMidnight += 5750;	
-		System.println("secsUntilMidnight = " + secsUntilMidnight);
+		//System.println("secsUntilMidnight = " + secsUntilMidnight);
 		
 		return secsUntilMidnight;
 	}
@@ -91,18 +92,35 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 		if (sunsetSecs == null) {
 			return BLANK_TIME;
 		}
-
-		var secsUntilMidnight = getSecsUntilMidnight();
-
-		System.println("sunsetSecs = " + sunsetSecs);
+	
+        var localNow = LocalTime.now();
+		//System.println("localNow" + localNow);
 		
-		if (secsUntilMidnight > sunsetSecs) {
-			return BLANK_TIME;
-		}
+        var localSecondsSinceMidnight = LocalTime.secondsSinceMidnight();
+        //System.println("localSecondsSinceMidnight" + localSecondsSinceMidnight);	
 
-		var deltaSunsetSecs = sunsetSecs - secsUntilMidnight;
+		var latLng = location.toDegrees();
+		var latitude = latLng[0];
+		var longitude = latLng[1];
+        var clockTime = System.getClockTime();	
+		
+        var sunrise = LocalTime.sunrise(
+            latitude, longitude, clockTime.timeZoneOffset,
+            LocalTime.ZENITH_OFFICIAL);
+        System.println("sunrise" + sunrise);	
+
+		
+		//var nowSecs = Time.now().value();
+		//System.println("nowSecs" + nowSecs);
+		//var todaySecs = Time.today().value();
+		//System.println("todaySecs" + todaySecs);
+		//var deltaSecs = nowSecs - todaySecs;
+		//System.println("deltaSecs" + deltaSecs);
+
+		//var secsUntilMidnight = getSecsUntilMidnight();
+		//var deltaSunsetSecs = sunsetSecs - secsUntilMidnight;
 		//System.println("deltaSunsetSecs = " + deltaSunsetSecs);
-
-		return getHMSStringFromSeconds(deltaSunsetSecs);
+		//return getHMSStringFromSeconds(deltaSunsetSecs);
+		return BLANK_TIME;
     }
 }
