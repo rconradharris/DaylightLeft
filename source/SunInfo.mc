@@ -1,7 +1,6 @@
 using MathExtra;
 using Toybox.Math;
 using Toybox.System;
-using Toybox.Time;
 
 module SunInfo {	
 	var ZENITH_OFFICIAL = 90.8333333333;
@@ -106,25 +105,10 @@ module SunInfo {
 		return localTS;
 	}
 	
-	// Returns duration of Daylight left as a Duration object or null if there is no sunset
-	function getDaylightLeftDuration(year, month, day, latitude, longitude, localOffset, zenith) {	
-		var nowSecs = Time.now().value();
-		var todaySecs = Time.today().value();
-		
-		var utcSecsSinceMidnight = nowSecs - todaySecs;
-		
-		var localSecsSinceMidnight = utcSecsSinceMidnight + (localOffset * 3600);
-		
-		var localSecsUntilSunset = SunInfo.getSunriseOrSunsetSecs(:sunset, year, month, day, latitude, longitude, localOffset, zenith);
-		
-		// If we're in the Artic and there isn't a sunset today...
-		if (localSecsUntilSunset == null) {
-			return null;
-		}
-		
-		var deltaSecsUntilSunset = localSecsUntilSunset - localSecsSinceMidnight;
-		
-		return new Time.Duration(deltaSecsUntilSunset);
+	// Returns an Array of values representing number of seconds into day for sunrise and sunset
+	function getSunriseAndSunsetSecs(year, month, day, latitude, longitude, localOffset, zenith) {
+		var sunriseSecs = getSunriseOrSunsetSecs(:sunrise, year, month, day, latitude, longitude, localOffset, zenith);
+		var sunsetSecs = getSunriseOrSunsetSecs(:sunset, year, month, day, latitude, longitude, localOffset, zenith);
+		return [sunriseSecs, sunsetSecs];
 	}
-	
 }
