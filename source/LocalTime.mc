@@ -91,8 +91,8 @@ module LocalTime {
         return thisDay.add(duration);
     }
 
-    // Returns number of secs from midnight for sunrise or sunset (or null if
-    // no sunrise or sunset at this location)
+    // Returns a Number of secs from midnight for sunrise or sunset (or null
+    // if no sunrise or sunset at this location)
     //
     // Source http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
     hidden function sunriseOrSunset(mode, year, month, day,
@@ -124,13 +124,13 @@ module LocalTime {
         //! 4. calculate the Sun's true longitude
         var L = M + (1.916 * MathExtra.sinD(M)) + (0.020 * MathExtra.sinD(2 * M)) + 282.634;
         //!NOTE: L potentially needs to be adjusted into the range [0,360) by adding/subtracting 360
-        L = MathExtra.mod360(L);
+        L = MathExtra.modFloat(L, 360);
         //System.println("L = " + L);
 
         //! 5a. calculate the Sun's right ascension
         var RA = MathExtra.atanD(0.91764 * MathExtra.tanD(L));
         //!NOTE: RA potentially needs to be adjusted into the range [0,360) by adding/subtracting 360
-        RA = MathExtra.mod360(RA);
+        RA = MathExtra.modFloat(RA, 360);
         //System.println("RA(5a) = " + RA);
 
         //! 5b. right ascension value needs to be in the same quadrant as L
@@ -183,9 +183,9 @@ module LocalTime {
         //System.println("localT = " + localT);
 
         //! 11. Convert localT to seconds
-        var localTS = (localT * 3600).toNumber();
+        var localTS = localT * 3600;
         //System.println("localTS = " + localTS);
 
-        return localTS;
+        return localTS.toNumber();
     }
 }

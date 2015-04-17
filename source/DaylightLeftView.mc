@@ -4,7 +4,6 @@ using Toybox.System;
 using Toybox.Time;
 using Toybox.WatchUi;
 
-	
 class DaylightLeftView extends WatchUi.SimpleDataField {
     var FORCE_SHOW = false;      // Show value even at night, for testing...
     var BLANK_TIME = new Time.Duration(0);

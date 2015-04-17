@@ -1,9 +1,12 @@
+using UnitTest;
 using Toybox.Math;
 
 module MathExtra {
-	//! No floor() method on Float!
-	function floor(x) {
-		return x.toNumber();
+
+	// Returns a Float representing the floor of a number
+    function floor(x) {
+        var truncated = x.toNumber().toFloat();
+        return (x < 0) ? truncated - 1: truncated;
 	}
 	
 	//! Return sine where x is in degrees
@@ -35,11 +38,13 @@ module MathExtra {
 	function atanD(x) {
 		return (180 / Math.PI) * Math.atan(x);
 	}
-	
-	
-	//! Return a float X modulo an integer y
-	//! NOTE: this is needed because modulo is not supported for Float types
+
+    // Returns a `Number` representing the modulo of two `Float` inputs.
+    //
+    // The builtin modulo operator % only works for integers. This function
+    // provides the same functionality for Floats.
 	function modFloat(x, y) {
+        //return x - (floor(x / y) * y);
 		if (x >= y) {
 			x -= y;
 		} else if (x < 0.0) {
@@ -47,15 +52,31 @@ module MathExtra {
 		}
 		return x;
 	}
-	
-	//! Return an angle modulo 360
-	//! NOTE: this is needed because modulo is not supported for Float types
-	function mod360(x) {
-		if (x >= 360.0) {
-			x -= 360.0;
-		} else if (x < 0.0) {
-			x += 360.0;
-		}
-		return x;
-	}
+
+    // Start Tests (comment these out before building production version)
+    class FloorTestCase extends TestCase {
+        var testRegistry = {
+            :testNegative   => "testNegative",
+            :testPositive   => "testPositive",
+            :testZero       => "testZero"
+        };
+        function testNegative() {
+            var actual = floor(-1.1);
+            UnitTest.Assert.areEqual({:expected => -2.0,
+                                      :actual => actual});
+        }
+        function testPositive() {
+            var actual = floor(1.1);
+            UnitTest.Assert.areEqual({:expected => 1.0,
+                                      :actual => actual});
+        }
+        function testZero() {
+            var actual = floor(0.0);
+            UnitTest.Assert.areEqual({:expected => 0.0,
+                                      :actual => actual});
+        }
+    }
+    function runTests() {
+        new FloorTestCase().runTests();
+    }
 }
