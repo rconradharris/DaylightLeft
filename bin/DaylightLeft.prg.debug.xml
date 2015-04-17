@@ -97,14 +97,13 @@
 <entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="60" pc="268437474" symbol="compute"/>
 <entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="61" pc="268437493" symbol="compute"/>
 <entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="64" pc="268437529" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="9" pc="268437648" symbol="&lt;init&gt;"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="10" pc="268437658" symbol="&lt;init&gt;"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="12" pc="268437697" symbol="&lt;init&gt;"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="13" pc="268437707" symbol="&lt;init&gt;"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="14" pc="268437716" symbol="&lt;init&gt;"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="9" pc="268437639" symbol="&lt;init&gt;"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="10" pc="268437649" symbol="&lt;init&gt;"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="12" pc="268437688" symbol="&lt;init&gt;"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="13" pc="268437698" symbol="&lt;init&gt;"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="14" pc="268437707" symbol="&lt;init&gt;"/>
 <entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftApp.mc" lineNum="15" pc="268437547" symbol="getInitialView"/>
-<entry filename="Rez" lineNum="5" pc="268437620" symbol="&lt;init&gt;"/>
-<entry filename="Rez" lineNum="10" pc="268437607" symbol="&lt;init&gt;"/>
+<entry filename="Rez" lineNum="5" pc="268437611" symbol="&lt;init&gt;"/>
 </pcToLineNum>
 <symbolTable>
 <entry id="8389359" symbol="&lt;gre&gt;"/>
@@ -166,7 +165,7 @@
 <entry field="true" id="8389155" symbol="FONT_MEDIUM"/>
 <entry id="8388663" method="true" symbol="testAdd"/>
 <entry id="8389119" method="true" symbol="getDirection"/>
-<entry id="31" method="true" symbol="sunset"/>
+<entry id="30" method="true" symbol="sunset"/>
 <entry field="true" id="8389475" symbol="rightPedalSmoothness"/>
 <entry id="8389101" method="true" symbol="onSwipe"/>
 <entry id="8389247" symbol="measurementType"/>
@@ -196,7 +195,7 @@
 <entry id="8388659" method="true" symbol="testAbs"/>
 <entry field="true" id="8388989" symbol="dutyCycle"/>
 <entry id="8389043" object="true" symbol="ProgressBar"/>
-<entry field="true" id="26" symbol="AppName"/>
+<entry field="true" id="25" symbol="AppName"/>
 <entry field="true" id="8388927" symbol="SECONDS_PER_YEAR"/>
 <entry id="8389418" object="true" symbol="CommonData"/>
 <entry id="8389114" method="true" symbol="getType"/>
@@ -214,7 +213,6 @@
 <entry id="8389184" method="true" symbol="drawLine"/>
 <entry id="8389250" symbol="timestamp"/>
 <entry id="8388877" method="true" symbol="createSession"/>
-<entry field="true" id="25" symbol="LauncherIcon"/>
 <entry id="8388616" module="true" symbol="Toybox_Communications"/>
 <entry field="true" id="8389380" symbol="OBSCURE_TOP"/>
 <entry field="true" id="8389201" symbol="MSG_ID_SEARCH_TIMEOUT"/>
@@ -233,7 +231,7 @@
 <entry field="true" id="8389248" symbol="rssi"/>
 <entry id="8389118" symbol="mDirection"/>
 <entry field="true" id="8389103" symbol="behavior"/>
-<entry field="true" id="33" symbol="ZENITH_OFFICIAL"/>
+<entry field="true" id="32" symbol="ZENITH_OFFICIAL"/>
 <entry id="8389252" method="true" symbol="setPayload"/>
 <entry id="8389108" method="true" symbol="onResponse"/>
 <entry field="true" id="8389506" symbol="age"/>
@@ -273,7 +271,7 @@
 <entry id="8388668" method="true" symbol="testBitwiseOr"/>
 <entry id="8389320" symbol="february"/>
 <entry field="true" id="8388838" symbol="SPORT_TENNIS"/>
-<entry field="true" id="35" symbol="ZENITH_NAUTICAL"/>
+<entry field="true" id="34" symbol="ZENITH_NAUTICAL"/>
 <entry field="true" id="8388961" symbol="power"/>
 <entry field="true" id="8388747" symbol="currentHeartRate"/>
 <entry field="true" id="8388967" symbol="TONE_START"/>
@@ -484,7 +482,7 @@
 <entry field="true" id="8388940" symbol="year"/>
 <entry field="true" id="8388723" symbol="timeZoneOffset"/>
 <entry field="true" id="8389272" symbol="searchTimeoutLowPriority"/>
-<entry id="37" method="true" symbol="isDaylightOut"/>
+<entry id="36" method="true" symbol="isDaylightOut"/>
 <entry id="20" method="true" symbol="atanD"/>
 <entry field="true" id="8388983" symbol="TONE_LOW_BATTERY"/>
 <entry id="8389178" method="true" symbol="drawCircle"/>
@@ -518,7 +516,7 @@
 <entry field="true" id="8389395" symbol="UNIT_METRIC"/>
 <entry id="8389130" symbol="mColor"/>
 <entry id="8388888" symbol="mLocation"/>
-<entry id="30" method="true" symbol="sunrise"/>
+<entry id="29" method="true" symbol="sunrise"/>
 <entry field="true" id="8389500" symbol="hydrationPercentage"/>
 <entry id="8389283" method="true" symbol="setProperty"/>
 <entry field="true" id="8389089" symbol="MAX_SIZE"/>
@@ -560,7 +558,7 @@
 <entry field="true" id="8389044" symbol="SLIDE_IMMEDIATE"/>
 <entry field="true" id="8388757" symbol="currentHeading"/>
 <entry id="8388828" method="true" symbol="onError"/>
-<entry id="38" symbol="sunriseOrSunsetMoment"/>
+<entry id="37" symbol="sunriseOrSunsetMoment"/>
 <entry field="true" id="8389104" symbol="event"/>
 <entry field="true" id="8388746" symbol="totalDescent"/>
 <entry id="8389410" module="true" symbol="AntPlus"/>
@@ -607,6 +605,7 @@
 <entry id="8388612" module="true" symbol="Toybox_Test"/>
 <entry field="true" id="8389411" symbol="BATT_STATUS_NEW"/>
 <entry id="8389028" object="true" symbol="MenuInputDelegate"/>
+<entry id="39" symbol="s1FU611IVX"/>
 <entry id="8388705" method="true" symbol="callback"/>
 <entry field="true" id="8389528" symbol="batteryVoltage"/>
 <entry field="true" id="8389314" symbol="latitude"/>
@@ -662,7 +661,7 @@
 <entry field="true" id="8389222" symbol="MSG_CODE_EVENT_CHANNEL_CLOSED"/>
 <entry field="true" id="8389505" symbol="userProfileId"/>
 <entry id="8388679" method="true" symbol="testObjectLock"/>
-<entry field="true" id="27" symbol="FORCE_SHOW"/>
+<entry field="true" id="26" symbol="FORCE_SHOW"/>
 <entry id="8389095" method="true" symbol="addItem"/>
 <entry field="true" id="8389157" symbol="COLOR_WHITE"/>
 <entry field="true" id="8389165" symbol="COLOR_GREEN"/>
@@ -670,7 +669,7 @@
 <entry id="8388693" method="true" symbol="testUserProfile"/>
 <entry id="8388920" object="true" symbol="Moment"/>
 <entry id="8389371" symbol="&lt;cht&gt;"/>
-<entry id="39" symbol="sunriseOrSunset"/>
+<entry id="38" symbol="sunriseOrSunset"/>
 <entry field="true" id="8388841" symbol="SPORT_WALKING"/>
 <entry field="true" id="8389405" symbol="weightUnits"/>
 <entry field="true" id="8389198" symbol="MSG_ID_ASSIGN_CHANNEL"/>
@@ -706,7 +705,7 @@
 <entry field="true" id="8389399" symbol="vibrateOn"/>
 <entry id="8389192" method="true" symbol="setPenWidth"/>
 <entry field="true" id="8388918" symbol="FORMAT_MEDIUM"/>
-<entry field="true" id="36" symbol="ZENITH_ASTRONOMICAL"/>
+<entry field="true" id="35" symbol="ZENITH_ASTRONOMICAL"/>
 <entry id="14" method="true" symbol="floor"/>
 <entry field="true" id="8389012" symbol="CLICK_TYPE_HOLD"/>
 <entry field="true" id="8389229" symbol="NETWORK_PUBLIC"/>
@@ -880,7 +879,7 @@
 <entry field="true" id="8389263" symbol="DEFAULT_DEVICE_TYPE"/>
 <entry id="8388728" method="true" symbol="getActivityInfo"/>
 <entry field="true" id="8388751" symbol="averageCadence"/>
-<entry id="29" symbol="valuesComputed"/>
+<entry id="28" symbol="valuesComputed"/>
 <entry field="true" id="8389473" symbol="separatePedalSmoothnessSupport"/>
 <entry field="true" id="8388697" symbol="timer2"/>
 <entry id="8389326" symbol="august"/>
@@ -1005,7 +1004,7 @@
 <entry field="true" id="8389207" symbol="MSG_ID_LIB_CONFIG"/>
 <entry id="8389010" object="true" symbol="KeyEvent"/>
 <entry field="true" id="8388864" symbol="SUB_SPORT_INDOOR_ROWING"/>
-<entry field="true" id="28" symbol="BLANK_TIME"/>
+<entry field="true" id="27" symbol="BLANK_TIME"/>
 <entry field="true" id="8388845" symbol="SPORT_ROWING"/>
 <entry field="true" id="8389030" symbol="CONFIRM_YES"/>
 <entry field="true" id="8388753" symbol="swimStrokeType"/>
@@ -1054,13 +1053,13 @@
 <entry id="8388660" method="true" symbol="testFetchRegister"/>
 <entry id="8389321" symbol="march"/>
 <entry field="true" id="8389507" symbol="activityLevel"/>
-<entry id="32" method="true" symbol="computeOneTime"/>
+<entry id="31" method="true" symbol="computeOneTime"/>
 <entry id="8388640" module="true" symbol="Lang"/>
 <entry id="8389333" symbol="tuesday"/>
 <entry field="true" id="8389018" symbol="SWIPE_LEFT"/>
 <entry id="8388682" method="true" symbol="testNaN"/>
 <entry field="true" id="8389444" symbol="WEIGHT_SCALE_GENDER_UNASSIGNED"/>
-<entry field="true" id="34" symbol="ZENITH_CIVIL"/>
+<entry field="true" id="33" symbol="ZENITH_CIVIL"/>
 <entry field="true" id="8389029" symbol="CONFIRM_NO"/>
 <entry id="8389125" method="true" symbol="onHide"/>
 <entry field="true" id="8388719" symbol="dst"/>
