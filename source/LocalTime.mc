@@ -16,38 +16,79 @@ module LocalTime {
     var ZENITH_NAUTICAL = 102.0;
     var ZENITH_ASTRONOMICAL = 108.0;
 
-    // Return now as unixTime relative to current timezone
+    // Return a `Moment`representing now relative to the local time
     function now() {
-        return Time.now().value() + System.getClockTime().timeZoneOffset;
+        var offsetSeconds = System.getClockTime().timeZoneOffset;
+        var offsetDuration = new Time.Duration(offsetSeconds);
+        return Time.now().add(offsetDuration);
     }
 
-    // Return number of seconds since local midnight
-    function secondsSinceMidnight() {
-        return now() - Time.today().value();
+    // Return a `Moment` representing the start of the current local day
+    function today() {
+        // Time.today() claims to do this based on your GPS, but appears to
+        // actually be using UTC
+        var utcToday = Time.today();
+
+        if (utcToday.greaterThan(now())) {
+            var oneDayBackwards = new Time.Duration(-Time.Gregorian.SECONDS_PER_DAY);
+            // We're still in the previous day locally, so use the previous day
+            return utcToday.add(oneDayBackwards);
+        } else {
+            // We're in the same day as UTC so we can use its today value
+            return utcToday;
+        }
     }
 
-    // Return sunrise as number of seconds from local midnight
+    // Return a `Moment` representing sunrise for the current day
     //
     // NOTE: This will return `null` if there's no sunrise at this particular
     // location
     function sunrise(latitude, longitude, timeZoneOffset, zenith) {
-        var gToday = Time.Gregorian.info(Time.today(), Time.FORMAT_SHORT);
-
-        return getSunriseOrSunsetSecs(
-            :sunrise, gToday.year, gToday.month, gToday.day,
-            latitude, longitude, timeZoneOffset, zenith);
+        return sunriseOrSunsetMoment(
+            :sunrise, latitude, longitude, timeZoneOffset, zenith);
     }
 
-    // Return sunset as number of seconds from local midnight
+    // Return a `Moment` representing sunset for the current day
     //
     // NOTE: This will return `null` if there's no sunset at this particular
     // location
     function sunset(latitude, longitude, timeZoneOffset, zenith) {
-        var gToday = Time.Gregorian.info(Time.today(), Time.FORMAT_SHORT);
+        return sunriseOrSunsetMoment(
+            :sunset, latitude, longitude, timeZoneOffset, zenith);
+    }
 
-        return getSunriseOrSunsetSecs(
-            :sunrise, gToday.year, gToday.month, gToday.day,
+    // Return whether there is daylight out right now
+    function isDaylightOut(sunrise, sunset) {
+        if (sunset == null) {
+            return true;
+        } else if (sunrise == null) {
+            return false;
+        } else {
+            var midnight = today();
+            var t = now().subtract(midnight).value();
+            var sunriseSeconds = sunrise.subtract(midnight).value();
+            var sunsetSeconds = sunset.subtract(midnight).value();
+            //System.println("sunriseSeconds = " + sunriseSeconds + " t = " + t + " sunsetSeconds = " + sunsetSeconds);
+
+            return (sunriseSeconds < t ) && (t < sunsetSeconds);
+        }
+    }
+
+    hidden function sunriseOrSunsetMoment(mode, latitude, longitude,
+                                          timeZoneOffset, zenith) {
+        var thisDay = today();
+        var gToday = Time.Gregorian.info(thisDay, Time.FORMAT_SHORT);
+
+        var secondsAfterMidnight = sunriseOrSunset(
+            mode, gToday.year, gToday.month, gToday.day,
             latitude, longitude, timeZoneOffset, zenith);
+
+        if (secondsAfterMidnight == null) {
+            return null;
+        }
+
+        var duration = new Time.Duration(secondsAfterMidnight);
+        return thisDay.add(duration);
     }
 
     // Returns number of secs from midnight for sunrise or sunset (or null if
@@ -142,7 +183,7 @@ module LocalTime {
         //System.println("localT = " + localT);
 
         //! 11. Convert localT to seconds
-        var localTS = MathExtra.floor(localT * 3600);
+        var localTS = (localT * 3600).toNumber();
         //System.println("localTS = " + localTS);
 
         return localTS;

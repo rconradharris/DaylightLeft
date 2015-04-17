@@ -17,98 +17,94 @@
 <entry filename="/Users/rick/Documents/code/DaylightLeft/source/MathExtra.mc" lineNum="57" pc="268435793" symbol="mod360"/>
 <entry filename="/Users/rick/Documents/code/DaylightLeft/source/MathExtra.mc" lineNum="59" pc="268435806" symbol="mod360"/>
 <entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="21" pc="268435812" symbol="now"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="26" pc="268435862" symbol="secondsSinceMidnight"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="34" pc="268435902" symbol="sunrise"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="36" pc="268435952" symbol="sunrise"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="46" pc="268436004" symbol="sunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="48" pc="268436054" symbol="sunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="60" pc="268436106" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="63" pc="268436116" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="64" pc="268436147" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="65" pc="268436178" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="66" pc="268436245" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="70" pc="268436264" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="71" pc="268436274" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="72" pc="268436287" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="73" pc="268436298" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="75" pc="268436320" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="80" pc="268436339" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="84" pc="268436355" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="86" pc="268436419" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="90" pc="268436438" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="92" pc="268436478" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="96" pc="268436497" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="97" pc="268436528" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="98" pc="268436559" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="102" pc="268436569" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="106" pc="268436579" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="107" pc="268436604" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="111" pc="268436638" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="113" pc="268436699" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="114" pc="268436710" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="116" pc="268436732" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="120" pc="268436737" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="121" pc="268436750" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="122" pc="268436761" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="124" pc="268436789" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="126" pc="268436808" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="130" pc="268436818" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="134" pc="268436840" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="136" pc="268436847" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="140" pc="268436871" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="141" pc="268436878" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="145" pc="268436902" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="148" pc="268436927" symbol="sunriseOrSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="9" pc="268436933" symbol="secondsToHMS"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="10" pc="268436952" symbol="secondsToHMS"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="11" pc="268436962" symbol="secondsToHMS"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="12" pc="268436972" symbol="secondsToHMS"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="13" pc="268436982" symbol="secondsToHMS"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="14" pc="268436992" symbol="secondsToHMS"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="19" pc="268437032" symbol="getHMSStringFromSeconds"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="21" pc="268437047" symbol="getHMSStringFromSeconds"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="22" pc="268437057" symbol="getHMSStringFromSeconds"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="24" pc="268437070" symbol="getHMSStringFromSeconds"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="25" pc="268437089" symbol="getHMSStringFromSeconds"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="26" pc="268437133" symbol="getHMSStringFromSeconds"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="40" pc="268437148" symbol="initialize"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="44" pc="268437164" symbol="computeAndStoreSunriseAndSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="45" pc="268437177" symbol="computeAndStoreSunriseAndSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="46" pc="268437187" symbol="computeAndStoreSunriseAndSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="49" pc="268437197" symbol="computeAndStoreSunriseAndSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="50" pc="268437220" symbol="computeAndStoreSunriseAndSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="53" pc="268437263" symbol="computeAndStoreSunriseAndSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="54" pc="268437280" symbol="computeAndStoreSunriseAndSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="57" pc="268437296" symbol="computeAndStoreSunriseAndSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="59" pc="268437359" symbol="computeAndStoreSunriseAndSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="60" pc="268437375" symbol="computeAndStoreSunriseAndSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="62" pc="268437391" symbol="computeAndStoreSunriseAndSunset"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="67" pc="268437404" symbol="getSecsUntilMidnight"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="70" pc="268437430" symbol="getSecsUntilMidnight"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="73" pc="268437456" symbol="getSecsUntilMidnight"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="76" pc="268437473" symbol="getSecsUntilMidnight"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="79" pc="268437489" symbol="getSecsUntilMidnight"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="86" pc="268437495" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="88" pc="268437505" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="89" pc="268437529" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="92" pc="268437546" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="93" pc="268437559" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="96" pc="268437571" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="99" pc="268437588" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="102" pc="268437605" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="103" pc="268437618" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="104" pc="268437628" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="105" pc="268437638" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="107" pc="268437655" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="110" pc="268437696" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="124" pc="268437720" symbol="compute"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="32" pc="268437839" symbol="&lt;init&gt;"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="33" pc="268437849" symbol="&lt;init&gt;"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="34" pc="268437858" symbol="&lt;init&gt;"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="35" pc="268437867" symbol="&lt;init&gt;"/>
-<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftApp.mc" lineNum="15" pc="268437738" symbol="getInitialView"/>
-<entry filename="Rez" lineNum="5" pc="268437811" symbol="&lt;init&gt;"/>
-<entry filename="Rez" lineNum="10" pc="268437798" symbol="&lt;init&gt;"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="22" pc="268435835" symbol="now"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="23" pc="268435865" symbol="now"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="30" pc="268435895" symbol="today"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="32" pc="268435912" symbol="today"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="33" pc="268435937" symbol="today"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="35" pc="268435989" symbol="today"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="38" pc="268436006" symbol="today"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="47" pc="268436012" symbol="sunrise"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="56" pc="268436040" symbol="sunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="62" pc="268436068" symbol="isDaylightOut"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="63" pc="268436075" symbol="isDaylightOut"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="65" pc="268436088" symbol="isDaylightOut"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="67" pc="268436094" symbol="isDaylightOut"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="68" pc="268436107" symbol="isDaylightOut"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="69" pc="268436140" symbol="isDaylightOut"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="70" pc="268436164" symbol="isDaylightOut"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="73" pc="268436188" symbol="isDaylightOut"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="79" pc="268436208" symbol="sunriseOrSunsetMoment"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="80" pc="268436221" symbol="sunriseOrSunsetMoment"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="82" pc="268436258" symbol="sunriseOrSunsetMoment"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="86" pc="268436305" symbol="sunriseOrSunsetMoment"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="87" pc="268436312" symbol="sunriseOrSunsetMoment"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="90" pc="268436317" symbol="sunriseOrSunsetMoment"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="91" pc="268436347" symbol="sunriseOrSunsetMoment"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="101" pc="268436364" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="104" pc="268436374" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="105" pc="268436405" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="106" pc="268436436" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="107" pc="268436503" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="111" pc="268436522" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="112" pc="268436532" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="113" pc="268436545" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="114" pc="268436556" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="116" pc="268436578" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="121" pc="268436597" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="125" pc="268436613" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="127" pc="268436677" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="131" pc="268436696" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="133" pc="268436736" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="137" pc="268436755" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="138" pc="268436786" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="139" pc="268436817" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="143" pc="268436827" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="147" pc="268436837" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="148" pc="268436862" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="152" pc="268436896" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="154" pc="268436957" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="155" pc="268436968" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="157" pc="268436990" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="161" pc="268436995" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="162" pc="268437008" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="163" pc="268437019" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="165" pc="268437047" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="167" pc="268437066" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="171" pc="268437076" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="175" pc="268437098" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="177" pc="268437105" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="181" pc="268437129" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="182" pc="268437136" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="186" pc="268437160" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/LocalTime.mc" lineNum="189" pc="268437179" symbol="sunriseOrSunset"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="18" pc="268437185" symbol="initialize"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="22" pc="268437201" symbol="computeOneTime"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="23" pc="268437214" symbol="computeOneTime"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="24" pc="268437224" symbol="computeOneTime"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="26" pc="268437234" symbol="computeOneTime"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="28" pc="268437251" symbol="computeOneTime"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="31" pc="268437298" symbol="computeOneTime"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="36" pc="268437345" symbol="computeOneTime"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="41" pc="268437358" symbol="compute"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="44" pc="268437368" symbol="compute"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="45" pc="268437375" symbol="compute"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="48" pc="268437387" symbol="compute"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="49" pc="268437399" symbol="compute"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="53" pc="268437416" symbol="compute"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="54" pc="268437429" symbol="compute"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="57" pc="268437441" symbol="compute"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="60" pc="268437474" symbol="compute"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="61" pc="268437493" symbol="compute"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="64" pc="268437529" symbol="compute"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="9" pc="268437648" symbol="&lt;init&gt;"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="10" pc="268437658" symbol="&lt;init&gt;"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="12" pc="268437697" symbol="&lt;init&gt;"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="13" pc="268437707" symbol="&lt;init&gt;"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftView.mc" lineNum="14" pc="268437716" symbol="&lt;init&gt;"/>
+<entry filename="/Users/rick/Documents/code/DaylightLeft/source/DaylightLeftApp.mc" lineNum="15" pc="268437547" symbol="getInitialView"/>
+<entry filename="Rez" lineNum="5" pc="268437620" symbol="&lt;init&gt;"/>
+<entry filename="Rez" lineNum="10" pc="268437607" symbol="&lt;init&gt;"/>
 </pcToLineNum>
 <symbolTable>
 <entry id="8389359" symbol="&lt;gre&gt;"/>
@@ -154,7 +150,7 @@
 <entry id="8389358" symbol="&lt;deu&gt;"/>
 <entry field="true" id="8388807" symbol="BLE_REQUEST_TOO_LARGE"/>
 <entry id="8388819" method="true" symbol="makeImageRequest"/>
-<entry id="25" module="true" symbol="Menus"/>
+<entry id="23" module="true" symbol="Menus"/>
 <entry id="4" module="true" symbol="globals_Rez_Drawables"/>
 <entry id="8388630" module="true" symbol="Toybox_Position"/>
 <entry id="8389354" symbol="&lt;dut&gt;"/>
@@ -170,7 +166,7 @@
 <entry field="true" id="8389155" symbol="FONT_MEDIUM"/>
 <entry id="8388663" method="true" symbol="testAdd"/>
 <entry id="8389119" method="true" symbol="getDirection"/>
-<entry id="41" method="true" symbol="sunset"/>
+<entry id="31" method="true" symbol="sunset"/>
 <entry field="true" id="8389475" symbol="rightPedalSmoothness"/>
 <entry id="8389101" method="true" symbol="onSwipe"/>
 <entry id="8389247" symbol="measurementType"/>
@@ -191,7 +187,6 @@
 <entry id="8389099" method="true" symbol="onHold"/>
 <entry id="8389478" method="true" symbol="getCommonData"/>
 <entry field="true" id="8388742" symbol="currentPower"/>
-<entry id="33" method="true" symbol="computeAndStoreSunriseAndSunset"/>
 <entry id="8389440" object="true" symbol="GeocacheProgrammableData"/>
 <entry id="8389031" object="true" symbol="Confirmation"/>
 <entry id="8389383" method="true" symbol="getObscurityFlags"/>
@@ -201,17 +196,17 @@
 <entry id="8388659" method="true" symbol="testAbs"/>
 <entry field="true" id="8388989" symbol="dutyCycle"/>
 <entry id="8389043" object="true" symbol="ProgressBar"/>
-<entry field="true" id="28" symbol="AppName"/>
+<entry field="true" id="26" symbol="AppName"/>
 <entry field="true" id="8388927" symbol="SECONDS_PER_YEAR"/>
 <entry id="8389418" object="true" symbol="CommonData"/>
 <entry id="8389114" method="true" symbol="getType"/>
-<entry id="15" object="true" symbol="DaylightLeftApp"/>
+<entry id="13" object="true" symbol="DaylightLeftApp"/>
 <entry field="true" id="8389427" symbol="BIKE_POWER_SENSOR_TYPE_POWER_ONLY"/>
 <entry id="8389032" object="true" symbol="ConfirmationDelegate"/>
 <entry field="true" id="8389520" symbol="manufacturerId"/>
 <entry id="8388614" module="true" symbol="Toybox_Activity"/>
 <entry id="8389177" method="true" symbol="clear"/>
-<entry id="17" method="true" symbol="sinD"/>
+<entry id="15" method="true" symbol="sinD"/>
 <entry field="true" id="8388891" symbol="subSport"/>
 <entry field="true" id="8388964" symbol="pressure"/>
 <entry id="8389303" method="true" symbol="enableLocationEvents"/>
@@ -219,7 +214,7 @@
 <entry id="8389184" method="true" symbol="drawLine"/>
 <entry id="8389250" symbol="timestamp"/>
 <entry id="8388877" method="true" symbol="createSession"/>
-<entry field="true" id="27" symbol="LauncherIcon"/>
+<entry field="true" id="25" symbol="LauncherIcon"/>
 <entry id="8388616" module="true" symbol="Toybox_Communications"/>
 <entry field="true" id="8389380" symbol="OBSCURE_TOP"/>
 <entry field="true" id="8389201" symbol="MSG_ID_SEARCH_TIMEOUT"/>
@@ -238,12 +233,12 @@
 <entry field="true" id="8389248" symbol="rssi"/>
 <entry id="8389118" symbol="mDirection"/>
 <entry field="true" id="8389103" symbol="behavior"/>
-<entry field="true" id="35" symbol="ZENITH_OFFICIAL"/>
+<entry field="true" id="33" symbol="ZENITH_OFFICIAL"/>
 <entry id="8389252" method="true" symbol="setPayload"/>
 <entry id="8389108" method="true" symbol="onResponse"/>
 <entry field="true" id="8389506" symbol="age"/>
 <entry field="true" id="8389503" symbol="pedalPowerPercent"/>
-<entry id="23" method="true" symbol="modFloat"/>
+<entry id="21" method="true" symbol="modFloat"/>
 <entry field="true" id="8388963" symbol="altitude"/>
 <entry field="true" id="8389200" symbol="MSG_ID_CHANNEL_PERIOD"/>
 <entry id="8389463" object="true" symbol="WeightScaleUserProfile"/>
@@ -278,7 +273,7 @@
 <entry id="8388668" method="true" symbol="testBitwiseOr"/>
 <entry id="8389320" symbol="february"/>
 <entry field="true" id="8388838" symbol="SPORT_TENNIS"/>
-<entry field="true" id="37" symbol="ZENITH_NAUTICAL"/>
+<entry field="true" id="35" symbol="ZENITH_NAUTICAL"/>
 <entry field="true" id="8388961" symbol="power"/>
 <entry field="true" id="8388747" symbol="currentHeartRate"/>
 <entry field="true" id="8388967" symbol="TONE_START"/>
@@ -292,7 +287,6 @@
 <entry field="true" id="8389497" symbol="bodyFatPercentage"/>
 <entry id="8388798" method="true" symbol="toLower"/>
 <entry field="true" id="8388735" symbol="currentLocationAccuracy"/>
-<entry id="34" method="true" symbol="getSecsUntilMidnight"/>
 <entry id="8388677" method="true" symbol="testTypeConversion"/>
 <entry id="8388942" method="true" symbol="add"/>
 <entry id="8388889" symbol="mIndex"/>
@@ -332,7 +326,7 @@
 <entry id="8389142" method="true" symbol="getProfile"/>
 <entry id="8389188" method="true" symbol="fillRectangle"/>
 <entry id="8388729" object="true" symbol="Info"/>
-<entry id="26" module="true" symbol="Layouts"/>
+<entry id="24" module="true" symbol="Layouts"/>
 <entry id="8388710" object="true" symbol="Stats"/>
 <entry field="true" id="8389152" symbol="FONT_XTINY"/>
 <entry id="8389189" method="true" symbol="fillRoundedRectangle"/>
@@ -373,7 +367,6 @@
 <entry field="true" id="8389005" symbol="KEY_UP_RIGHT"/>
 <entry field="true" id="8388726" symbol="freeMemory"/>
 <entry id="8389079" method="true" symbol="onPreviousPage"/>
-<entry id="45" symbol="getSunriseAndSunsetSecs"/>
 <entry id="8389538" object="true" symbol="TextPickerDelegate"/>
 <entry field="true" id="8389381" symbol="OBSCURE_RIGHT"/>
 <entry id="8388714" method="true" symbol="getClockTime"/>
@@ -416,7 +409,7 @@
 <entry id="8389375" object="true" symbol="WatchFace"/>
 <entry field="true" id="8389498" symbol="bodyWeight"/>
 <entry id="8389435" object="true" symbol="CalculatedWheelDistance"/>
-<entry id="14" object="true" symbol="DaylightLeftView"/>
+<entry id="12" object="true" symbol="DaylightLeftView"/>
 <entry field="true" id="8389442" symbol="WEIGHT_SCALE_GENDER_FEMALE"/>
 <entry field="true" id="8388911" symbol="distance"/>
 <entry id="8389391" method="true" symbol="testArray"/>
@@ -491,8 +484,8 @@
 <entry field="true" id="8388940" symbol="year"/>
 <entry field="true" id="8388723" symbol="timeZoneOffset"/>
 <entry field="true" id="8389272" symbol="searchTimeoutLowPriority"/>
-<entry id="22" method="true" symbol="atanD"/>
-<entry field="true" id="32" symbol="sunsetSecs"/>
+<entry id="37" method="true" symbol="isDaylightOut"/>
+<entry id="20" method="true" symbol="atanD"/>
 <entry field="true" id="8388983" symbol="TONE_LOW_BATTERY"/>
 <entry id="8389178" method="true" symbol="drawCircle"/>
 <entry id="8389281" method="true" symbol="onStop"/>
@@ -525,7 +518,7 @@
 <entry field="true" id="8389395" symbol="UNIT_METRIC"/>
 <entry id="8389130" symbol="mColor"/>
 <entry id="8388888" symbol="mLocation"/>
-<entry id="40" method="true" symbol="sunrise"/>
+<entry id="30" method="true" symbol="sunrise"/>
 <entry field="true" id="8389500" symbol="hydrationPercentage"/>
 <entry id="8389283" method="true" symbol="setProperty"/>
 <entry field="true" id="8389089" symbol="MAX_SIZE"/>
@@ -547,7 +540,6 @@
 <entry field="true" id="8388875" symbol="SUB_SPORT_INDOOR_SKIING"/>
 <entry field="true" id="8389270" symbol="messagePeriod"/>
 <entry field="true" id="8389426" symbol="BIKE_POWER_SENSOR_TYPE_NONE"/>
-<entry id="39" method="true" symbol="secondsSinceMidnight"/>
 <entry id="8389350" module="true" symbol="globals"/>
 <entry field="true" id="8389015" symbol="SWIPE_UP"/>
 <entry field="true" id="8389530" symbol="userProfileExchangeSupport"/>
@@ -559,7 +551,7 @@
 <entry id="8388778" symbol="mClass"/>
 <entry id="8388934" method="true" symbol="momentNative"/>
 <entry field="true" id="8389000" symbol="KEY_DOWN_RIGHT"/>
-<entry id="21" method="true" symbol="acosD"/>
+<entry id="19" method="true" symbol="acosD"/>
 <entry id="8388641" module="true" symbol="Math"/>
 <entry id="8389409" module="true" symbol="Toybox_AntPlus"/>
 <entry field="true" id="8388800" symbol="UNKNOWN_ERROR"/>
@@ -568,6 +560,7 @@
 <entry field="true" id="8389044" symbol="SLIDE_IMMEDIATE"/>
 <entry field="true" id="8388757" symbol="currentHeading"/>
 <entry id="8388828" method="true" symbol="onError"/>
+<entry id="38" symbol="sunriseOrSunsetMoment"/>
 <entry field="true" id="8389104" symbol="event"/>
 <entry field="true" id="8388746" symbol="totalDescent"/>
 <entry id="8389410" module="true" symbol="AntPlus"/>
@@ -629,7 +622,7 @@
 <entry id="8389109" method="true" symbol="onMenuItem"/>
 <entry field="true" id="8389151" symbol="birthYear"/>
 <entry id="8389331" symbol="sunday"/>
-<entry id="24" method="true" symbol="mod360"/>
+<entry id="22" method="true" symbol="mod360"/>
 <entry field="true" id="8389173" symbol="TEXT_JUSTIFY_CENTER"/>
 <entry id="8389070" method="true" symbol="setSize"/>
 <entry id="8388712" method="true" symbol="print"/>
@@ -664,11 +657,12 @@
 <entry id="8389278" symbol="mPropertiesChanged"/>
 <entry field="true" id="8388970" symbol="TONE_ALERT_HI"/>
 <entry field="true" id="8389174" symbol="TEXT_JUSTIFY_LEFT"/>
-<entry field="true" id="8388923" method="true" symbol="today"/>
+<entry id="8388923" method="true" symbol="today"/>
 <entry field="true" id="8389412" symbol="BATT_STATUS_GOOD"/>
 <entry field="true" id="8389222" symbol="MSG_CODE_EVENT_CHANNEL_CLOSED"/>
 <entry field="true" id="8389505" symbol="userProfileId"/>
 <entry id="8388679" method="true" symbol="testObjectLock"/>
+<entry field="true" id="27" symbol="FORCE_SHOW"/>
 <entry id="8389095" method="true" symbol="addItem"/>
 <entry field="true" id="8389157" symbol="COLOR_WHITE"/>
 <entry field="true" id="8389165" symbol="COLOR_GREEN"/>
@@ -676,13 +670,12 @@
 <entry id="8388693" method="true" symbol="testUserProfile"/>
 <entry id="8388920" object="true" symbol="Moment"/>
 <entry id="8389371" symbol="&lt;cht&gt;"/>
-<entry id="42" symbol="sunriseOrSunset"/>
+<entry id="39" symbol="sunriseOrSunset"/>
 <entry field="true" id="8388841" symbol="SPORT_WALKING"/>
 <entry field="true" id="8389405" symbol="weightUnits"/>
 <entry field="true" id="8389198" symbol="MSG_ID_ASSIGN_CHANNEL"/>
 <entry field="true" id="8388850" symbol="SUB_SPORT_GENERIC"/>
 <entry id="8388818" method="true" symbol="makeJsonRequestNative"/>
-<entry id="44" symbol="SunInfo"/>
 <entry id="8389335" symbol="thursday"/>
 <entry id="8389185" method="true" symbol="fillCircle"/>
 <entry id="8388947" method="true" symbol="value"/>
@@ -713,8 +706,8 @@
 <entry field="true" id="8389399" symbol="vibrateOn"/>
 <entry id="8389192" method="true" symbol="setPenWidth"/>
 <entry field="true" id="8388918" symbol="FORMAT_MEDIUM"/>
-<entry field="true" id="38" symbol="ZENITH_ASTRONOMICAL"/>
-<entry id="16" method="true" symbol="floor"/>
+<entry field="true" id="36" symbol="ZENITH_ASTRONOMICAL"/>
+<entry id="14" method="true" symbol="floor"/>
 <entry field="true" id="8389012" symbol="CLICK_TYPE_HOLD"/>
 <entry field="true" id="8389229" symbol="NETWORK_PUBLIC"/>
 <entry id="8389053" object="true" symbol="BitmapResource"/>
@@ -769,7 +762,6 @@
 <entry field="true" id="8388972" symbol="TONE_LOUD_BEEP"/>
 <entry field="true" id="8389140" symbol="GENDER_MALE"/>
 <entry id="8389539" symbol="mInitialText"/>
-<entry id="12" method="true" symbol="secondsToHMS"/>
 <entry field="true" id="8388965" symbol="heading"/>
 <entry id="8388787" method="true" symbol="equals"/>
 <entry field="true" id="8389144" symbol="gender"/>
@@ -781,12 +773,11 @@
 <entry field="true" id="8388840" symbol="SPORT_TRAINING"/>
 <entry field="true" id="8388981" symbol="TONE_SUCCESS"/>
 <entry id="8389514" method="true" symbol="getCalculatedWheelDistance"/>
-<entry id="13" method="true" symbol="getHMSStringFromSeconds"/>
 <entry id="8388985" method="true" symbol="playTone"/>
 <entry field="true" id="8388736" symbol="currentLocation"/>
 <entry field="true" id="8388916" symbol="startOfDay"/>
 <entry field="true" id="8388752" symbol="maxCadence"/>
-<entry id="19" method="true" symbol="tanD"/>
+<entry id="17" method="true" symbol="tanD"/>
 <entry id="8389338" symbol="minute"/>
 <entry id="8389086" symbol="mProgressValue"/>
 <entry field="true" id="8389199" symbol="MSG_ID_CHANNEL_ID"/>
@@ -803,7 +794,6 @@
 <entry id="8389313" symbol="aMethod"/>
 <entry field="true" id="8388866" symbol="SUB_SPORT_STAIR_CLIMBING"/>
 <entry id="8389437" object="true" symbol="PedalPowerBalance"/>
-<entry id="43" symbol="getSunriseOrSunsetSecs"/>
 <entry field="true" id="8388805" symbol="BLE_REQUEST_CANCELLED"/>
 <entry id="8388776" method="true" symbol="toDouble"/>
 <entry id="8388825" object="true" symbol="ConnectionListener"/>
@@ -850,7 +840,7 @@
 <entry field="true" id="8389072" symbol="BEHAVIOR_NEXT_PAGE"/>
 <entry field="true" id="8389484" symbol="identificationString"/>
 <entry field="true" id="8389075" symbol="BEHAVIOR_ON_BACK"/>
-<entry id="18" method="true" symbol="cosD"/>
+<entry id="16" method="true" symbol="cosD"/>
 <entry id="8389097" method="true" symbol="onKey"/>
 <entry field="true" id="8389265" symbol="DEFAULT_MESSAGE_PERIOD"/>
 <entry id="8389133" method="true" symbol="setJustification"/>
@@ -876,7 +866,7 @@
 <entry field="true" id="8389160" symbol="COLOR_BLACK"/>
 <entry field="true" id="8388849" symbol="SPORT_PADDLING"/>
 <entry id="8389121" method="true" symbol="findDrawableById"/>
-<entry id="20" method="true" symbol="asinD"/>
+<entry id="18" method="true" symbol="asinD"/>
 <entry field="true" id="8389315" symbol="longitude"/>
 <entry field="true" id="8389518" symbol="wheelDistance"/>
 <entry id="8389308" method="true" symbol="toRadians"/>
@@ -890,6 +880,7 @@
 <entry field="true" id="8389263" symbol="DEFAULT_DEVICE_TYPE"/>
 <entry id="8388728" method="true" symbol="getActivityInfo"/>
 <entry field="true" id="8388751" symbol="averageCadence"/>
+<entry id="29" symbol="valuesComputed"/>
 <entry field="true" id="8389473" symbol="separatePedalSmoothnessSupport"/>
 <entry field="true" id="8388697" symbol="timer2"/>
 <entry id="8389326" symbol="august"/>
@@ -915,7 +906,6 @@
 <entry field="true" id="8389379" symbol="OBSCURE_LEFT"/>
 <entry id="8388820" object="true" symbol="MailboxIterator"/>
 <entry field="true" id="8388917" symbol="FORMAT_SHORT"/>
-<entry field="true" id="30" symbol="computedSunriseAndSunset"/>
 <entry id="8388791" method="true" symbol="remove"/>
 <entry field="true" id="8389292" symbol="GEO_MGRS"/>
 <entry field="true" id="8389003" symbol="KEY_UP"/>
@@ -986,7 +976,6 @@
 <entry field="true" id="8389457" symbol="WEIGHT_SCALE_STATUS_SEARCH_TIMEOUT"/>
 <entry id="8389123" method="true" symbol="onShow"/>
 <entry field="true" id="8389273" symbol="searchTimeoutHighPriority"/>
-<entry field="true" id="31" symbol="sunriseSecs"/>
 <entry id="8389253" symbol="setPayloadWithOffset"/>
 <entry field="true" id="8389169" symbol="COLOR_PURPLE"/>
 <entry id="8389479" method="true" symbol="getDeviceState"/>
@@ -1016,7 +1005,7 @@
 <entry field="true" id="8389207" symbol="MSG_ID_LIB_CONFIG"/>
 <entry id="8389010" object="true" symbol="KeyEvent"/>
 <entry field="true" id="8388864" symbol="SUB_SPORT_INDOOR_ROWING"/>
-<entry field="true" id="29" symbol="BLANK_TIME"/>
+<entry field="true" id="28" symbol="BLANK_TIME"/>
 <entry field="true" id="8388845" symbol="SPORT_ROWING"/>
 <entry field="true" id="8389030" symbol="CONFIRM_YES"/>
 <entry field="true" id="8388753" symbol="swimStrokeType"/>
@@ -1065,12 +1054,13 @@
 <entry id="8388660" method="true" symbol="testFetchRegister"/>
 <entry id="8389321" symbol="march"/>
 <entry field="true" id="8389507" symbol="activityLevel"/>
+<entry id="32" method="true" symbol="computeOneTime"/>
 <entry id="8388640" module="true" symbol="Lang"/>
 <entry id="8389333" symbol="tuesday"/>
 <entry field="true" id="8389018" symbol="SWIPE_LEFT"/>
 <entry id="8388682" method="true" symbol="testNaN"/>
 <entry field="true" id="8389444" symbol="WEIGHT_SCALE_GENDER_UNASSIGNED"/>
-<entry field="true" id="36" symbol="ZENITH_CIVIL"/>
+<entry field="true" id="34" symbol="ZENITH_CIVIL"/>
 <entry field="true" id="8389029" symbol="CONFIRM_NO"/>
 <entry id="8389125" method="true" symbol="onHide"/>
 <entry field="true" id="8388719" symbol="dst"/>
@@ -1123,7 +1113,7 @@
 <functionEntry name="now">
 <documentation/>
 </functionEntry>
-<functionEntry name="secondsSinceMidnight">
+<functionEntry name="today">
 <documentation/>
 </functionEntry>
 <functionEntry name="sunrise">
@@ -1134,6 +1124,19 @@
 <documentation/>
 </functionEntry>
 <functionEntry name="sunset">
+<param id="latitude"/>
+<param id="longitude"/>
+<param id="timeZoneOffset"/>
+<param id="zenith"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="isDaylightOut">
+<param id="sunrise"/>
+<param id="sunset"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="sunriseOrSunsetMoment">
+<param id="mode"/>
 <param id="latitude"/>
 <param id="longitude"/>
 <param id="timeZoneOffset"/>
@@ -1151,27 +1154,16 @@
 <param id="zenith"/>
 <documentation/>
 </functionEntry>
-<functionEntry name="secondsToHMS">
-<param id="totalSeconds"/>
-<documentation/>
-</functionEntry>
-<functionEntry name="getHMSStringFromSeconds">
-<param id="totalSeconds"/>
-<documentation/>
-</functionEntry>
 <functionEntry name="initialize">
 <documentation><![CDATA[<div class="description"> Set the label of the data field here.<br/></div>]]></documentation>
 </functionEntry>
-<functionEntry name="computeAndStoreSunriseAndSunset">
+<functionEntry name="computeOneTime">
 <param id="location"/>
-<documentation/>
-</functionEntry>
-<functionEntry name="getSecsUntilMidnight">
 <documentation/>
 </functionEntry>
 <functionEntry name="compute">
 <param id="info"/>
-<documentation><![CDATA[<div class="description"> The given info object contains all the current workout<br/> information. Calculate a value and return it in this method.<br/></div>]]></documentation>
+<documentation/>
 </functionEntry>
 <functionEntry name="onStart">
 <documentation><![CDATA[<div class="description"> onStart() is called on application start up<br/></div>]]></documentation>
