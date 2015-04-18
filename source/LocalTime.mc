@@ -124,13 +124,13 @@ module LocalTime {
         //! 4. calculate the Sun's true longitude
         var L = M + (1.916 * MathExtra.sinD(M)) + (0.020 * MathExtra.sinD(2 * M)) + 282.634;
         //!NOTE: L potentially needs to be adjusted into the range [0,360) by adding/subtracting 360
-        L = MathExtra.modFloat(L, 360);
+        L = MathExtra.fmodPositive(L, 360);
         //System.println("L = " + L);
 
         //! 5a. calculate the Sun's right ascension
         var RA = MathExtra.atanD(0.91764 * MathExtra.tanD(L));
         //!NOTE: RA potentially needs to be adjusted into the range [0,360) by adding/subtracting 360
-        RA = MathExtra.modFloat(RA, 360);
+        RA = MathExtra.fmodPositive(RA, 360);
         //System.println("RA(5a) = " + RA);
 
         //! 5b. right ascension value needs to be in the same quadrant as L
@@ -174,12 +174,12 @@ module LocalTime {
         //! 9. adjust back to UTC
         var UT = T - lngHour;
         //!NOTE: UT potentially needs to be adjusted into the range [0,24) by adding/subtracting 24
-        UT = MathExtra.modFloat(UT, 24.0);
+        UT = MathExtra.fmodPositive(UT, 24.0);
         //System.println("UT = " + UT);
 
         //! 10. convert UT value to local time zone of latitude/longitude
         var localT = UT + localOffset;
-        localT = MathExtra.modFloat(localT, 24.0);
+        localT = MathExtra.fmodPositive(localT, 24.0);
         //System.println("localT = " + localT);
 
         //! 11. Convert localT to seconds

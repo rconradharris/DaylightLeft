@@ -41,6 +41,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 
         // If GPS hasn't initialized yet  or we don't GPS capabilities
         if (location == null) {
+            //System.println("Showing blank time because we don't have a location yet");
             return BLANK_TIME;
         }
 
@@ -49,7 +50,11 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         }
 
         // No sunset this day (are we in the arctic?)
-        if (sunset == null) {
+        if (sunrise == null) {
+            //System.println("Showing blank time because we there's no sunrise in this location");
+            return BLANK_TIME;
+        } else if (sunset == null) {
+            //System.println("Showing blank time because we there's no sunset in this location");
             return BLANK_TIME;
         }
 
@@ -60,6 +65,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
             return sunset.subtract(LocalTime.now());
         }
 
+        System.println("Showing blank time because it's not currently daylight out");
         return BLANK_TIME;
     }
 }
