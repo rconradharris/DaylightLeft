@@ -58,14 +58,22 @@ module LocalTime {
     }
 
     // Return whether there is daylight out right now
-    function isDaylightOut(sunrise, sunset) {
+    function isDaylightOut(options) {
+        var sunrise = options[:sunrise];
+        var sunset = options[:sunset];
+        var thisMoment = options[:now];
+        
+        if (thisMoment == null) {
+            thisMoment = now();
+        }
+         
         if (sunset == null) {
             return true;
         } else if (sunrise == null) {
             return false;
         } else {
             var midnight = today();
-            var t = now().subtract(midnight).value();
+            var t = thisMoment.subtract(midnight).value();
             var sunriseSeconds = sunrise.subtract(midnight).value();
             var sunsetSeconds = sunset.subtract(midnight).value();
             //System.println("sunriseSeconds = " + sunriseSeconds + " t = " + t + " sunsetSeconds = " + sunsetSeconds);

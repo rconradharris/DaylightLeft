@@ -5,12 +5,18 @@ using Toybox.Time;
 using Toybox.WatchUi;
 
 class DaylightLeftView extends WatchUi.SimpleDataField {
-    var FORCE_SHOW = false;      // Show value even at night, for testing...
-    var BLANK_TIME = new Time.Duration(0);
+    // Show value even at night, for testing...
+    var FORCE_SHOW = false;
+    
+    // Testing override for Local.now() 
+    //var NOW = LocalTime.now().add(new Time.Duration(-3600 * 4));
+    var NOW = null;
 	
-	hidden var valuesComputed = false;
-	hidden var sunrise = null;
-	hidden var sunset = null;
+    var BLANK_TIME = new Time.Duration(0);
+    
+	hidden var mValuesComputed = false;
+	hidden var mSunrise = null;
+	hidden var mSunset = null;
 
     //! Set the label of the data field here.
     function initialize() {
@@ -24,15 +30,15 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 		
         var clockTime = System.getClockTime();	
 		
-        sunrise = LocalTime.sunrise(
+        mSunrise = LocalTime.sunrise(
             latitude, longitude, clockTime.timeZoneOffset,
             LocalTime.ZENITH_OFFICIAL);
-        sunset = LocalTime.sunset(
+        mSunset = LocalTime.sunset(
             latitude, longitude, clockTime.timeZoneOffset,
             LocalTime.ZENITH_OFFICIAL);
-        //System.println("sunrise = " + sunrise.value() + " sunset = " + sunset.value());
+        //System.println("mSunrise = " + mSunrise.value() + " mSunset = " + mSunset.value());
 
-        valuesComputed = true;
+        mValuesComputed = true;
     }
     
     function compute(info) {
@@ -45,27 +51,32 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
             return BLANK_TIME;
         }
 
-        if (!valuesComputed) {
+        if (!mValuesComputed) {
             computeOneTime(location);
         }
 
         // No sunset this day (are we in the arctic?)
-        if (sunrise == null) {
+        if (mSunrise == null) {
             //System.println("Showing blank time because we there's no sunrise in this location");
             return BLANK_TIME;
-        } else if (sunset == null) {
+        } else if (mSunset == null) {
             //System.println("Showing blank time because we there's no sunset in this location");
             return BLANK_TIME;
         }
+        
+        var now = (NOW == null) ? LocalTime.now() : NOW;
 
-        var isDaylightOut = LocalTime.isDaylightOut(sunrise, sunset);
+        var isDaylightOut = LocalTime.isDaylightOut({
+            :sunrise => mSunrise,
+            :sunset => mSunset,
+            :now => now});
         //System.println("isDaylightOut = " + isDaylightOut);
 
         if (isDaylightOut || FORCE_SHOW) {
-            return sunset.subtract(LocalTime.now());
+            return mSunset.subtract(now);
         }
 
-        System.println("Showing blank time because it's not currently daylight out");
+        //System.println("Showing blank time because it's not currently daylight out");
         return BLANK_TIME;
     }
 }

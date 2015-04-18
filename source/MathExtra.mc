@@ -1,9 +1,8 @@
-using UnitTest;
+//using UnitTest;
 using Toybox.Math;
 using Toybox.System;
 
 module MathExtra {
-
 	// Returns a Float representing the floor of a number
     function floor(x) {
         var truncated = x.toNumber().toFloat();
@@ -52,14 +51,15 @@ module MathExtra {
     // Returns a `Number` representing the positive modulus of two `Float` inputs.
     //
     // For example fmod(-1, 24) is -1, but fmodPositive(-1, 24) is 23.
-    function fmodPositive(x, y) {
-        var val = fmod(x, y);
+    function fmodPositive(dividend, divisor) {
+        var val = fmod(dividend, divisor);
         if (val < 0) {
-            val += y;
+            val += divisor;
         }
-        //System.println("x=" + x.toString() + " y=" + y.toString() + " val= " + val.toString());
+        //System.println("dividend=" + dividend.toString() + " divisor=" + divisor.toString() + " val= " + val.toString());
         return val;
     }
+    
     // Start Tests (comment these out before building production version)
     //class FloorTestCase extends TestCase {
     //    var testRegistry = {
