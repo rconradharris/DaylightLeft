@@ -1,4 +1,6 @@
-Shows how much remaining daylight you have, perfect for making sure you're back to your parking spot by dusk when out on a late-day hike or jog.
+Shows how much remaining daylight you have, perfect for making sure you're back to your parking spot by dusk.
+
+After sunset, the datafield will display "00:00".
 
 CHANGE LOG
 
