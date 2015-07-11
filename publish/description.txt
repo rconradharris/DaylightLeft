@@ -1,0 +1,6 @@
+Shows how much remaining daylight you have, perfect for making sure you're back to your parking spot by dusk when out on a late-day hike or jog.
+
+CHANGE LOG
+
+0.2 D2 Bravo support
+0.1 Initial release

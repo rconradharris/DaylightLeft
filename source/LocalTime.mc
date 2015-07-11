@@ -43,48 +43,22 @@ module LocalTime {
     //
     // NOTE: This will return `null` if there's no sunrise at this particular
     // location
-    function sunrise(latitude, longitude, timeZoneOffset, zenith) {
+    function sunrise(thisDay, latitude, longitude, timeZoneOffset, zenith) {
         return sunriseOrSunsetMoment(
-            :sunrise, latitude, longitude, timeZoneOffset, zenith);
+            :sunrise, thisDay, latitude, longitude, timeZoneOffset, zenith);
     }
 
     // Return a `Moment` representing sunset for the current day
     //
     // NOTE: This will return `null` if there's no sunset at this particular
     // location
-    function sunset(latitude, longitude, timeZoneOffset, zenith) {
+    function sunset(thisDay, latitude, longitude, timeZoneOffset, zenith) {
         return sunriseOrSunsetMoment(
-            :sunset, latitude, longitude, timeZoneOffset, zenith);
+            :sunset, thisDay, latitude, longitude, timeZoneOffset, zenith);
     }
 
-    // Return whether there is daylight out right now
-    function isDaylightOut(options) {
-        var sunrise = options[:sunrise];
-        var sunset = options[:sunset];
-        var thisMoment = options[:now];
-        
-        if (thisMoment == null) {
-            thisMoment = now();
-        }
-         
-        if (sunset == null) {
-            return true;
-        } else if (sunrise == null) {
-            return false;
-        } else {
-            var midnight = today();
-            var t = thisMoment.subtract(midnight).value();
-            var sunriseSeconds = sunrise.subtract(midnight).value();
-            var sunsetSeconds = sunset.subtract(midnight).value();
-            //System.println("sunriseSeconds = " + sunriseSeconds + " t = " + t + " sunsetSeconds = " + sunsetSeconds);
-
-            return (sunriseSeconds < t ) && (t < sunsetSeconds);
-        }
-    }
-
-    hidden function sunriseOrSunsetMoment(mode, latitude, longitude,
+    hidden function sunriseOrSunsetMoment(mode, thisDay, latitude, longitude,
                                           timeZoneOffset, zenith) {
-        var thisDay = today();
         var gToday = Time.Gregorian.info(thisDay, Time.FORMAT_SHORT);
 
         var secondsAfterMidnight = sunriseOrSunset(

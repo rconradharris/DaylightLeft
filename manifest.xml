@@ -3,12 +3,11 @@
     <iq:application entry="DaylightLeftApp" id="AB439B3A3C6F422193C37370CCE588F4" name="AppName" type="datafield">
 
         <iq:products>
-            <iq:product id="square_watch"/>
-            <iq:product id="round_watch"/>
-            <iq:product id="vivoactive"/>
+            <iq:product id="d2bravo"/>
+            <iq:product id="epix"/>
             <iq:product id="fenix3"/>
             <iq:product id="fr920xt"/>
-            <iq:product id="epix"/>
+            <iq:product id="vivoactive"/>
         </iq:products>
 
         <iq:permissions>

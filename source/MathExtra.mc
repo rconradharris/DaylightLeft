@@ -1,4 +1,3 @@
-//using UnitTest;
 using Toybox.Math;
 using Toybox.System;
 
