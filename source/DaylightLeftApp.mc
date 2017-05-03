@@ -2,6 +2,10 @@ using Toybox.Application;
 
 class DaylightLeftApp extends Application.AppBase {
 
+    function initialize() {
+        Application.AppBase.initialize();
+    }
+
     function onStart(state) {
         Application.AppBase.onStart(state);
     }

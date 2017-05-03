@@ -7,13 +7,13 @@ using LocalTime;
 using MathExtra;
 
 class DaylightLeftView extends WatchUi.SimpleDataField {
-    //hidden var TEST_LAT_LNG = null;
-    //hidden var TEST_TODAY_OFFSET = null;
-    //hidden var TEST_NOW_OFFSET = null;
+    hidden const TEST_LAT_LNG = null;
+    hidden const TEST_TODAY_OFFSET = null;
+    hidden const TEST_NOW_OFFSET = null;
 
-    hidden var TEST_LAT_LNG = [30.25, -97.75];
-    hidden var TEST_TODAY_OFFSET = -1;
-    hidden var TEST_NOW_OFFSET = -6 * 3600;
+    //hidden const TEST_LAT_LNG = [30.25, -97.75];
+    //hidden const TEST_TODAY_OFFSET = -1;
+    //hidden const TEST_NOW_OFFSET = -6 * 3600;
 
     hidden var BLANK_TIME = new Time.Duration(0);
 
@@ -21,6 +21,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
     hidden var mNoSunsetHere = false;
 
     function initialize() {
+        WatchUi.SimpleDataField.initialize();
         label = "Daylight Left";
     }
 
@@ -30,7 +31,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         // If we already determined that sunset doesn't occur in this
         // location, then short-circuit
         if (mNoSunsetHere) {
-            System.println("Short circuiting because this location doesnt have a sunset");
+            //System.println("Short circuiting because this location doesnt have a sunset");
             return BLANK_TIME;
         }
 
@@ -44,7 +45,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 
         // If GPS hasn't initialized yet  or we don't GPS capabilities
         if (latlng == null) {
-            System.println("Showing blank time because we don't have a location yet");
+            //System.println("Showing blank time because we don't have a location yet");
             return BLANK_TIME;
         }
 
@@ -64,31 +65,32 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
             var latitude = latlng[0];
             var longitude = latlng[1];
 
-            System.println(Lang.format("Lat/Lng is [$1$, $2$]", latlng));
+            //System.println(Lang.format("Lat/Lng is [$1$, $2$]", latlng));
 
             var timeZoneOffset = System.getClockTime().timeZoneOffset;
 
-            System.println(Lang.format("Timezone offset is $1$", [timeZoneOffset]));
+            //System.println(Lang.format("Timezone offset is $1$", [timeZoneOffset]));
 
             var secondsAfterMidnight = LocalTime.sunset(
                 year, month, day, latitude, longitude, timeZoneOffset,
                 LocalTime.ZENITH_OFFICIAL);
 
             if (secondsAfterMidnight != null) {
-                var ss = secondsAfterMidnight;
-                var mm = ss / 60;
-                ss %= 60;
-                var hh = mm / 60;
-                mm %= 60;
-                System.println(Lang.format("Sunset for $1$-$2$-$3$ is $4$:$5$:$6$",
-                     [year, month, day,
-                      hh.format("%02d"), mm.format("%02d"), ss.format("%02d")]));
+                //var ss = secondsAfterMidnight;
+                //var mm = ss / 60;
+                //ss %= 60;
+                //var hh = mm / 60;
+                //mm %= 60;
+                //System.println(Lang.format("Sunset for $1$-$2$-$3$ is $4$:$5$:$6$",
+                //     [year, month, day,
+                //      hh.format("%02d"), mm.format("%02d"), ss.format("%02d")]));
+
                 mSunset = today.add(new Time.Duration(secondsAfterMidnight));
             }
         }
 
         if (mSunset == null) {
-            System.println("Sunset does not occur at this location");
+            //System.println("Sunset does not occur at this location");
             mNoSunsetHere = true;
             return BLANK_TIME;
         }
@@ -99,7 +101,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         }
 
         if (now.greaterThan(mSunset)) {
-            System.println("We're after sunset, so showing blank time...");
+            //System.println("We're after sunset, so showing blank time...");
             return BLANK_TIME;
         }
 
