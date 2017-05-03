@@ -1,1 +1,1 @@
-- Use strings xml
+- Make zenith configurable in app settings

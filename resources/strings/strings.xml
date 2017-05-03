@@ -1,0 +1,7 @@
+<strings>
+    <string id="AppName">DaylightLeft</string>
+    <string id="label">Daylight Left</string>
+    <string id="no_gps">No GPS</string>
+    <string id="no_sunset">No Sunset</string>
+    <string id="no_sunrise">No Sunrise</string>
+</strings>

@@ -5,6 +5,11 @@ using Toybox.Time;
 using MathExtra;
 
 module LocalTime {
+    enum {
+        NO_SUNRISE = -1,
+        NO_SUNSET = -2
+    }
+
     // These values used to determine the definition of sunrise and sunset
     //
     // Official is when the sun actually crosses the horizon
@@ -86,9 +91,9 @@ module LocalTime {
         var cosH = (MathExtra.cosD(zenith) - (sinDec * MathExtra.sinD(latitude))) / (cosDec * MathExtra.cosD(latitude));
         //System.println("cosH = " + cosH);
         if (cosH >  1) {
-            return null;
+            return NO_SUNSET;
         } else if (cosH < -1) {
-            return null;
+            return NO_SUNRISE;
         }
 
         //! 7b. finish calculating H and convert into hours
