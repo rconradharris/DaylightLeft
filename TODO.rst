@@ -1,1 +1,1 @@
-- Test system startOfDay
+- Cache last known latlng
