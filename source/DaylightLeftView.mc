@@ -9,9 +9,7 @@ using MathExtra;
 
 class DaylightLeftView extends WatchUi.SimpleDataField {
     enum {
-        OK = 0,
-        NO_SUNSET = -1,
-        NO_GPS = -2
+        PROPERTY_LAT_LNG = 0
     }
 
     hidden const TEST_LAT_LNG = null;
@@ -30,22 +28,19 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         label = "Daylight Left";
     }
 
-    function computeSunset(info) {
-        // Retrieve the current latitude/longitude
+    hidden function getLatLng(info) {
         var latlng = null;
-        if (info.currentLocation != null) {
-            latlng = info.currentLocation.toDegrees();
-        }
         if (TEST_LAT_LNG != null) {
+            // 1. Test data
             latlng = TEST_LAT_LNG;
+        } else if (info.currentLocation != null) {
+            // 2. Real GPS coords
+           latlng = info.currentLocation.toDegrees();
         }
+        return latlng;
+    }
 
-        // If GPS hasn't initialized yet  or we don't GPS capabilities
-        if (latlng == null) {
-            //System.println("Showing blank time because we don't have a location yet");
-            return [NO_GPS, null];
-        }
-
+    hidden function computeSunset(latlng) {
         // Compute today
         var today = Time.today();
         if (TEST_TODAY_OFFSET != null) {
@@ -57,10 +52,6 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         var month = gToday.month;
         var day = gToday.day;
 
-        // Compute sunset for today, if not already cached...
-        var latitude = latlng[0];
-        var longitude = latlng[1];
-
         //System.println(Lang.format("Lat/Lng is [$1$, $2$]", latlng));
 
         var timeZoneOffset = System.getClockTime().timeZoneOffset;
@@ -68,11 +59,11 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         //System.println(Lang.format("Timezone offset is $1$", [timeZoneOffset]));
 
         var secondsAfterMidnight = LocalTime.sunset(
-            year, month, day, latitude, longitude, timeZoneOffset,
+            year, month, day, latlng[0], latlng[1], timeZoneOffset,
             LocalTime.ZENITH_OFFICIAL);
 
         if (secondsAfterMidnight == null) {
-            return [NO_SUNSET, null];
+            return null;
         }
 
         //var ss = secondsAfterMidnight;
@@ -84,45 +75,58 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         //     [year, month, day,
         //      hh.format("%02d"), mm.format("%02d"), ss.format("%02d")]));
 
-        return [OK, today.add(new Time.Duration(secondsAfterMidnight))];
+        return today.add(new Time.Duration(secondsAfterMidnight));
     }
 
     function compute(info) {
-        var status = null;
-        var sunset = null;
+        var sunset;
+        var usingGPSCache = false;
 
         if (mSunset == null) {
-            var rv = computeSunset(info);
-            status = rv[0];
-            sunset = rv[1];
+
+            var latlng = getLatLng(info);
+
+            if (latlng == null) {
+                usingGPSCache = true;
+                latlng = mApp.getProperty(PROPERTY_LAT_LNG);
+                //System.println("Using cached coordinates " + latlng);
+            } else {
+                //System.println("Using real coordinates " + latlng);
+                mApp.setProperty(PROPERTY_LAT_LNG, latlng);
+            }
+
+            if (latlng == null) {
+                //System.println("Unable to compute sunset without GPS");
+                return "No GPS";
+            }
+
+            sunset = computeSunset(latlng);
+
+            // We only want to cache the sunset if we're using current GPS
+            // coordinates, not cached. This is because we want to keep polling
+            // for real coordinates in case they weren't immediately available
+            if (!usingGPSCache && (sunset != null)) {
+                mSunset = sunset;
+            }
         } else {
-            status = OK;
             sunset = mSunset;
         }
 
-        if (status == NO_GPS) {
-            //System.println("Unable to compute sunset without GPS");
-            return "No GPS";
-        } else if (status == NO_SUNSET) {
+        if (sunset == null) {
             //System.println("Sunset does not occur at this location");
             return "No Sunset";
-        } else if (status < 0) {
-            //System.println("Unknown error");
-            return "Error";
         }
-
-        mSunset = sunset;
 
         var now = Time.now();
         if (TEST_NOW_OFFSET != null) {
             now = now.add(new Time.Duration(TEST_NOW_OFFSET));
         }
 
-        if (now.greaterThan(mSunset)) {
+        if (now.greaterThan(sunset)) {
             //System.println("We're after sunset, so showing blank time...");
             return new Time.Duration(0);
         }
 
-        return mSunset.subtract(now);
+        return sunset.subtract(now);
     }
 }

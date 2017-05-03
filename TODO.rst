@@ -1,1 +1,1 @@
-- Cache last known latlng
+- Use strings xml
