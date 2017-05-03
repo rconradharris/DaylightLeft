@@ -1,17 +1,16 @@
-using Toybox.Application as App;
+using Toybox.Application;
 
-class DaylightLeftApp extends App.AppBase {
-    function onStart() {
-        // NOTE: before building a production binary, be sure to comment out
-        // all of the UnitTest code to keep the binary small
-        //MathExtra.runTests();
+class DaylightLeftApp extends Application.AppBase {
+
+    function onStart(state) {
+        Application.AppBase.onStart(state);
     }
 
-    function onStop() {
+    function onStop(state) {
+        Application.AppBase.onStop(state);
     }
 
     function getInitialView() {
         return [ new DaylightLeftView() ];
     }
-
 }
