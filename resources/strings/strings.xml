@@ -4,4 +4,8 @@
     <string id="no_gps">No GPS</string>
     <string id="no_sunset">No Sunset</string>
     <string id="no_sunrise">No Sunrise</string>
+    <string id="zenith">Countdown To</string>
+    <string id="zenith_official">Sunset</string>
+    <string id="zenith_civil">Twilight</string>
+    <string id="zenith_astronomical">Dark</string>
 </strings>

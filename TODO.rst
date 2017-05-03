@@ -1,1 +1,0 @@
-- Make zenith configurable in app settings

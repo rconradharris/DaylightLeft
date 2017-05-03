@@ -1,6 +1,7 @@
 using Toybox.Application;
 
 class DaylightLeftApp extends Application.AppBase {
+    var mSunset = null;
 
     function initialize() {
         Application.AppBase.initialize();
@@ -12,6 +13,11 @@ class DaylightLeftApp extends Application.AppBase {
 
     function onStop(state) {
         Application.AppBase.onStop(state);
+    }
+
+    function onSettingsChanged() {
+        // Recompute sunset if settings changed...
+        mSunset = null;
     }
 
     function getInitialView() {

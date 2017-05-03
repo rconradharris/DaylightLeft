@@ -1,0 +1,9 @@
+<settings>
+    <setting propertyKey="@Properties.zenith" title="@Strings.zenith">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.zenith_official</listEntry>
+            <listEntry value="1">@Strings.zenith_civil</listEntry>
+            <listEntry value="3">@Strings.zenith_astronomical</listEntry>
+        </settingConfig>
+    </setting>
+</settings>

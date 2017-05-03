@@ -12,6 +12,14 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         PROPERTY_LAT_LNG = 0
     }
 
+    enum {
+        ZENITH_OFFICIAL = 0,
+        ZENITH_CIVIL = 1,
+        ZENITH_NAUTICAL = 2,
+        ZENITH_ASTRONOMICAL = 3
+    }
+
+
     hidden const TEST_LAT_LNG = null;
     //hidden const TEST_LAT_LNG = [30.25, -97.75];      // Austin, TX
     //hidden const TEST_LAT_LNG = [90.0, 0];            // North Pole
@@ -23,11 +31,21 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
     hidden const TEST_NOW_OFFSET = null;
     //hidden const TEST_NOW_OFFSET = -6 * 3600;
 
-    hidden var mSunset = null;
-
     function initialize() {
         WatchUi.SimpleDataField.initialize();
         label = WatchUi.loadResource(Rez.Strings.label);
+    }
+
+    hidden function getZenith() {
+        var zenith = Application.getApp().getProperty("zenith");
+        if (zenith == ZENITH_CIVIL) {
+            return LocalTime.ZENITH_CIVIL;
+        } else if (zenith == ZENITH_NAUTICAL) {
+            return LocalTime.ZENITH_NAUTICAL;
+        } else if (zenith == ZENITH_ASTRONOMICAL) {
+            return LocalTime.ZENITH_ASTRONOMICAL;
+        }
+        return LocalTime.ZENITH_OFFICIAL;
     }
 
     hidden function getLatLng(info) {
@@ -60,9 +78,11 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 
         //System.println(Lang.format("Timezone offset is $1$", [timeZoneOffset]));
 
+        var zenith = getZenith();
+        //System.println("Using zenith " + zenith);
+
         var secondsAfterMidnight = LocalTime.sunset(
-            year, month, day, latlng[0], latlng[1], timeZoneOffset,
-            LocalTime.ZENITH_OFFICIAL);
+            year, month, day, latlng[0], latlng[1], timeZoneOffset, zenith);
 
         if (secondsAfterMidnight < 0) {
             // Negative numbrers represent exceptional cases
@@ -85,7 +105,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         var sunset;
         var usingGPSCache = false;
 
-        if (mSunset == null) {
+        if (Application.getApp().mSunset == null) {
 
             var latlng = getLatLng(info);
 
@@ -109,10 +129,10 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
             // coordinates, not cached. This is because we want to keep polling
             // for real coordinates in case they weren't immediately available
             if (!usingGPSCache) {
-                mSunset = sunset;
+                Application.getApp().mSunset = sunset;
             }
         } else {
-            sunset = mSunset;
+            sunset = Application.getApp().mSunset;
         }
 
         if (sunset == LocalTime.NO_SUNSET) {
