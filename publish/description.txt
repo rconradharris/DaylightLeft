@@ -4,6 +4,6 @@ After sunset, the datafield will display "00:00".
 
 CHANGE LOG
 
-0.3 Fixing ConnectIQ errors
+0.3 Fixing ConnectIQ errors, Vivoactive 3 support
 0.2 D2 Bravo support
 0.1 Initial release
