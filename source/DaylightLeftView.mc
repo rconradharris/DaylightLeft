@@ -23,9 +23,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
     hidden const TEST_NOW_OFFSET = null;
     //hidden const TEST_NOW_OFFSET = -6 * 3600;
 
-
     hidden var mSunset = null;
-    hidden var mApp = Application.getApp();
 
     function initialize() {
         WatchUi.SimpleDataField.initialize();
@@ -93,11 +91,11 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 
             if (latlng == null) {
                 usingGPSCache = true;
-                latlng = mApp.getProperty(PROPERTY_LAT_LNG);
+                latlng = Application.getApp().getProperty(PROPERTY_LAT_LNG);
                 //System.println("Using cached coordinates " + latlng);
             } else {
                 //System.println("Using real coordinates " + latlng);
-                mApp.setProperty(PROPERTY_LAT_LNG, latlng);
+                Application.getApp().setProperty(PROPERTY_LAT_LNG, latlng);
             }
 
             if (latlng == null) {
