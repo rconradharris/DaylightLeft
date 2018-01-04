@@ -1,0 +1,3 @@
+1.2 Fix ConnectIQ crash, support Vivoactive 3
+1.1 Adds 'Countdown To' setting, uses cached sunset information if GPS is disabled
+1.0 Support more devices and fix some outstanding bugs

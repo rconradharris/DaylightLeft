@@ -102,10 +102,10 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
     }
 
     function compute(info) {
-        var sunset;
+        var sunset = Application.getApp().mSunset;
         var usingGPSCache = false;
 
-        if (Application.getApp().mSunset == null) {
+        if (sunset == null) {
 
             var latlng = getLatLng(info);
 
@@ -131,8 +131,6 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
             if (!usingGPSCache) {
                 Application.getApp().mSunset = sunset;
             }
-        } else {
-            sunset = Application.getApp().mSunset;
         }
 
         if (sunset == LocalTime.NO_SUNSET) {

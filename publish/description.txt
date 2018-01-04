@@ -1,9 +1,17 @@
 Shows how much remaining daylight you have, perfect for making sure you're back to your parking spot by dusk.
 
-After sunset, the datafield will display "00:00".
+The default is to countdown towards official sunset; however, you can use Garmin Connect Mobile app to change this to:
 
-CHANGE LOG
+* Sunset (the official sunset)
+* Twilight (enough light to work)
+* Dark (no light left)
 
-0.3 Fixing ConnectIQ errors, Vivoactive 3 support
-0.2 D2 Bravo support
-0.1 Initial release
+To update the settings:
+
+1. Goto Garmin Connect Mobile
+2. Select 'Garmin Devices' and pick your device
+3. Select 'Connect IQ Apps'
+4. Select 'Data Fields'
+5. Select 'Daylight Left'
+6. Select 'Settings'
+7. Set 'Countdown To' field to your choice.
