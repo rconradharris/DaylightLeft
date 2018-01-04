@@ -129,7 +129,11 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
             // coordinates, not cached. This is because we want to keep polling
             // for real coordinates in case they weren't immediately available
             if (!usingGPSCache) {
-                Application.getApp().mSunset = sunset;
+                var app = Application.getApp();
+                app.mSunset = sunset;
+
+                // N.B: The parser doesn't like this statement, so it has to be broken up into a temporary variable in order to compile
+                //Application.getApp().mSunset = sunset;
             }
         }
 
