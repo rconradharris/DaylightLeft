@@ -1,3 +1,4 @@
+2.0 Fixed 'No GPS' bug, support many more devices
 1.3 Add back 'Countdown To' setting which was accidentally removed
 1.2 Fix ConnectIQ crash, support Vivoactive 3
 1.1 Adds 'Countdown To' setting, uses cached sunset information if GPS is disabled

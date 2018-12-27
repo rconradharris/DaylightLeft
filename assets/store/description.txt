@@ -1,3 +1,5 @@
+!!! NOTE TO EXISTING USERS: The 'No GPS' error should be fixed now. Thanks for the patience! !!!
+
 Shows how much remaining daylight you have, perfect for making sure you're back to your parking spot by dusk.
 
 The default is to countdown towards official sunset; however, you can use Garmin Connect Mobile app to change this to:
