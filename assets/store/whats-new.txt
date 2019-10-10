@@ -1,3 +1,4 @@
+2.1 Support Fenix 6, Forerunner 245 / 945, Vivoactive 4 and more
 2.0 Fixed 'No GPS' bug, support many more devices
 1.3 Add back 'Countdown To' setting which was accidentally removed
 1.2 Fix ConnectIQ crash, support Vivoactive 3
