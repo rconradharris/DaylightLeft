@@ -23,23 +23,23 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
     }
 
 
-    hidden const TEST_LAT_LNG = null;
-    //hidden const TEST_LAT_LNG = [30.25, -97.75];      // Austin, TX
-    //hidden const TEST_LAT_LNG = [90.0, 0];            // North Pole
-    //hidden const TEST_LAT_LNG = [-90.0, 0];           // South Pole
+    private const TEST_LAT_LNG = null;
+    //private const TEST_LAT_LNG = [30.25, -97.75];      // Austin, TX
+    //private const TEST_LAT_LNG = [90.0, 0];            // North Pole
+    //private const TEST_LAT_LNG = [-90.0, 0];           // South Pole
 
-    hidden const TEST_TODAY_OFFSET as Number = 0;
-    //hidden const TEST_TODAY_OFFSET = -1;
+    private const TEST_TODAY_OFFSET as Number = 0;
+    //private const TEST_TODAY_OFFSET = -1;
 
-    hidden const TEST_NOW_OFFSET as Number = 0;
-    //hidden const TEST_NOW_OFFSET = -6 * 3600;
+    private const TEST_NOW_OFFSET as Number = 0;
+    //private const TEST_NOW_OFFSET = -6 * 3600;
 
     function initialize() {
         WatchUi.SimpleDataField.initialize();
         label = WatchUi.loadResource(Rez.Strings.label);
     }
 
-    hidden function getZenith() {
+    private function getZenith() {
         var zenith = Application.getApp().getProperty("zenith");
         if (zenith == ZENITH_CIVIL) {
             return LocalTime.ZENITH_CIVIL;
@@ -51,7 +51,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         return LocalTime.ZENITH_OFFICIAL;
     }
 
-    hidden function getLatLng(info) {
+    private function getLatLng(info) {
         var latlng = null;
         if (TEST_LAT_LNG != null) {
             // 1. Test data
@@ -63,7 +63,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         return latlng;
     }
 
-    hidden function computeSunset(latlng) {
+    private function computeSunset(latlng) {
         // Compute today
         var today = Time.today();
         if (TEST_TODAY_OFFSET != 0) {
