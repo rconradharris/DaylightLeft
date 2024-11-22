@@ -49,7 +49,6 @@ module MathExtra {
         if (val < 0) {
             val += divisor;
         }
-        //System.println("dividend=" + dividend.toString() + " divisor=" + divisor.toString() + " val= " + val.toString());
         return val;
     }
 }

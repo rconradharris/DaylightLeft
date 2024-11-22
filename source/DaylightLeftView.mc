@@ -12,6 +12,8 @@ using MathExtra;
 
 class DaylightLeftView extends WatchUi.SimpleDataField {
 
+    private const DEBUG_MODE = false;
+
     enum {
         PROPERTY_LAT_LNG = 0
     }
@@ -30,6 +32,18 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
     function initialize() {
         WatchUi.SimpleDataField.initialize();
        label = WatchUi.loadResource(Rez.Strings.label);
+    }
+
+    private function DEBUG(msg as String) as Void {
+        if (self.DEBUG_MODE) {
+            PRINT(msg);
+        }
+    }
+
+    private function DEBUGF(format as String, params as Array) as Void {
+        if (self.DEBUG_MODE) {
+            PRINTF(format, params);
+        }
     }
 
     private function getLatLng(info) {
@@ -56,14 +70,14 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         var month = gToday.month;
         var day = gToday.day;
 
-        //System.println(Lang.format("Lat/Lng is [$1$, $2$]", latlng));
+        DEBUGF("Lat/Lng is [$1$, $2$]", latlng);
 
         var timeZoneOffset = System.getClockTime().timeZoneOffset;
 
-        //System.println(Lang.format("Timezone offset is $1$", [timeZoneOffset]));
+        DEBUGF("Timezone offset is $1$", [timeZoneOffset]);
 
         var zenith = Settings.getZenith();
-        //System.println("Using zenith " + zenith);
+        DEBUG("Using zenith " + zenith);
 
         var secondsAfterMidnight = LocalTime.sunset(
             year, month, day, latlng[0], latlng[1], timeZoneOffset, zenith);
@@ -72,15 +86,6 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
             // Negative numbrers represent exceptional cases
             return secondsAfterMidnight;
         }
-
-        //var ss = secondsAfterMidnight;
-        //var mm = ss / 60;
-        //ss %= 60;
-        //var hh = mm / 60;
-        //mm %= 60;
-        //System.println(Lang.format("Sunset for $1$-$2$-$3$ is $4$:$5$:$6$",
-        //     [year, month, day,
-        //      hh.format("%02d"), mm.format("%02d"), ss.format("%02d")]));
 
         return today.add(new Time.Duration(secondsAfterMidnight));
     }
@@ -96,14 +101,14 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
             if (latlng == null) {
                 usingGPSCache = true;
                 latlng = Application.getApp().getProperty(PROPERTY_LAT_LNG);
-                //System.println("Using cached coordinates " + latlng);
+                DEBUG("Using cached coordinates " + latlng);
             } else {
-                //System.println("Using real coordinates " + latlng);
+                DEBUG("Using real coordinates " + latlng);
                 Application.getApp().setProperty(PROPERTY_LAT_LNG, latlng);
             }
 
             if (latlng == null) {
-                //System.println("Unable to compute sunset without GPS");
+                DEBUG("Unable to compute sunset without GPS");
                 return WatchUi.loadResource(Rez.Strings.no_gps);
             }
 
@@ -122,10 +127,10 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         }
 
         if (sunset == LocalTime.NO_SUNSET) {
-            //System.println("Sunset does not occur at this location");
+            DEBUG("Sunset does not occur at this location");
             return WatchUi.loadResource(Rez.Strings.no_sunset);
         }  else if (sunset == LocalTime.NO_SUNRISE) {
-            //System.println("Sunrise does not occur at this location");
+            DEBUG("Sunrise does not occur at this location");
             return WatchUi.loadResource(Rez.Strings.no_sunrise);
         }
 
@@ -135,7 +140,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         }
 
         if (now.greaterThan(sunset)) {
-            //System.println("We're after sunset, so showing blank time...");
+            DEBUG("We're after sunset, so showing blank time...");
             return new Time.Duration(0);
         }
 

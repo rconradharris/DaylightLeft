@@ -5,6 +5,8 @@ using Toybox.Application.Properties as Properties;
 
 module Settings {
 
+    const DEBUG_MODE = false;
+
     const SETTING_ZENITH = "zenith";
 
     var _cache as Dictionary<Application.PropertyKeyType, Application.PropertyValueType> = {};
@@ -31,9 +33,11 @@ module Settings {
     function _getCachedProperty(key as Application.PropertyKeyType) as Application.PropertyValueType {
         if (self._cache.hasKey(key)) {
             // Hit
+            DEBUGF("settings: cache hit key=$1$", [key]);
             return self._cache[key];
         }
         // Miss
+        DEBUGF("settings: cache miss key=$1$", [key]);
         var x = self._getProperty(key);
         self._cache[key] = x;
         return x;
@@ -42,17 +46,31 @@ module Settings {
     function _getProperty(key as Application.PropertyKeyType) as Application.PropertyValueType {
         if (Properties has :getValue) {
             // CIQ >= 2.4
+            DEBUGF("settings: prop get new method key=$1$", [key]);
             return Properties.getValue(key);
         }
 
         // Old, deprecated method
+        DEBUGF("settings: prop get old method key=$1$", [key]);
         var app = Application.getApp();
         return app.getProperty(key);
     }
 
     function invalidateCache() as Void {
+        DEBUG("settings: invalidating cache");
         self._cache = {};
     }
 
+    function DEBUG(msg as String) as Void {
+        if (self.DEBUG_MODE) {
+            PRINT(msg);
+        }
+    }
+
+    function DEBUGF(format as String, params as Array) as Void {
+        if (self.DEBUG_MODE) {
+            PRINTF(format, params);
+        }
+    }
 
 }

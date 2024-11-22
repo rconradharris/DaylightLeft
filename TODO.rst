@@ -1,4 +1,2 @@
 - Use Application.Storage instead of Properties
-- Add debug logs
-    - Use (:debug)
 - Add support for new devices

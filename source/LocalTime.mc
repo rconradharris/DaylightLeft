@@ -1,3 +1,5 @@
+import Toybox.Lang;
+
 using Toybox.Math;
 using Toybox.System;
 using Toybox.Time;
@@ -5,6 +7,8 @@ using Toybox.Time;
 using MathExtra;
 
 module LocalTime {
+
+    const DEBUG_MODE = false;
 
     enum {
         NO_SUNRISE = -1,
@@ -21,6 +25,12 @@ module LocalTime {
     var ZENITH_CIVIL = 96.0;
     var ZENITH_NAUTICAL = 102.0;
     var ZENITH_ASTRONOMICAL = 108.0;
+
+    function DEBUG(msg as String) as Void {
+        if (self.DEBUG_MODE) {
+            PRINT(msg);
+        }
+    }
 
     function sunrise(year, month, day, latitude, longitude, timeZoneOffset, zenith) {
         return sunEvent(
@@ -45,7 +55,7 @@ module LocalTime {
         var N2 = Math.floor((month + 9) / 12);
         var N3 = (1 + Math.floor((year - 4 * Math.floor(year / 4) + 2) / 3));
         var N = N1 - (N2 * N3) + day - 30;
-        //System.println("N = " + N);
+        DEBUG("N = " + N);
 
         //! 2. convert the longitude to hour value and calculate an approximate time
         var lngHour = longitude / 15.0;
@@ -55,42 +65,42 @@ module LocalTime {
         } else {
             t = N + ((18.0 - lngHour) / 24.0);
         }
-        //System.println("t = " + t);
+        DEBUG("t = " + t);
 
         //! 3. calculate the Sun's mean anomaly
         var M = (0.9856 * t) - 3.289;
-        //System.println("M = " + M);
+        DEBUG("M = " + M);
 
         //! 4. calculate the Sun's true longitude
         var L = M + (1.916 * MathExtra.sinD(M)) + (0.020 * MathExtra.sinD(2 * M)) + 282.634;
         //!NOTE: L potentially needs to be adjusted into the range [0,360) by adding/subtracting 360
         L = MathExtra.fmodPositive(L, 360);
-        //System.println("L = " + L);
+        DEBUG("L = " + L);
 
         //! 5a. calculate the Sun's right ascension
         var RA = MathExtra.atanD(0.91764 * MathExtra.tanD(L));
         //!NOTE: RA potentially needs to be adjusted into the range [0,360) by adding/subtracting 360
         RA = MathExtra.fmodPositive(RA, 360);
-        //System.println("RA(5a) = " + RA);
+        DEBUG("RA(5a) = " + RA);
 
         //! 5b. right ascension value needs to be in the same quadrant as L
         var Lquadrant  = Math.floor(L / 90) * 90.0;
         var RAquadrant = Math.floor(RA / 90) * 90.0;
         RA = RA + (Lquadrant - RAquadrant);
-        //System.println("RA(5b) = " + RA);
+        DEBUG("RA(5b) = " + RA);
 
         //! 5c. right ascension value needs to be converted into hours
         RA = RA / 15.0;
-        //System.println("RA(5c) = " + RA);
+        DEBUG("RA(5c) = " + RA);
 
         //!6. calculate the Sun's declination
         var sinDec = 0.39782 * MathExtra.sinD(L);
         var cosDec = MathExtra.cosD(MathExtra.asinD(sinDec));
-        //System.println("sinDec = " + sinDec + " cosDec = " + cosDec);
+        DEBUG("sinDec = " + sinDec + " cosDec = " + cosDec);
 
         //! 7a. calculate the Sun's local hour angle
         var cosH = (MathExtra.cosD(zenith) - (sinDec * MathExtra.sinD(latitude))) / (cosDec * MathExtra.cosD(latitude));
-        //System.println("cosH = " + cosH);
+        DEBUG("cosH = " + cosH);
         if (cosH >  1) {
             return NO_SUNSET;
         } else if (cosH < -1) {
@@ -105,26 +115,26 @@ module LocalTime {
             H = MathExtra.acosD(cosH);
         }
         H = H / 15;
-        //System.println("H = " + H);
+        DEBUG("H = " + H);
 
         //! 8. calculate local mean time of rising/setting
         var T = H + RA - (0.06571 * t) - 6.622;
-        //System.println("T = " + T);
+        DEBUG("T = " + T);
 
         //! 9. adjust back to UTC
         var UT = T - lngHour;
         //!NOTE: UT potentially needs to be adjusted into the range [0,24) by adding/subtracting 24
         UT = MathExtra.fmodPositive(UT, 24.0);
-        //System.println("UT = " + UT);
+        DEBUG("UT = " + UT);
 
         //! 10. convert UT value to local time zone of latitude/longitude
         var localT = UT + localOffset;
         localT = MathExtra.fmodPositive(localT, 24.0);
-        //System.println("localT = " + localT);
+        DEBUG("localT = " + localT);
 
         //! 11. Convert localT to seconds
         var localTS = localT * 3600;
-        //System.println("localTS = " + localTS);
+        DEBUG("localTS = " + localTS);
 
         return localTS.toNumber();
     }
