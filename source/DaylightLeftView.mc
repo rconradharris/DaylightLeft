@@ -12,7 +12,7 @@ using MathExtra;
 
 class DaylightLeftView extends WatchUi.SimpleDataField {
 
-    private const DEBUG_MODE = false;
+    private const DEBUG_MODE = true;
 
     enum {
         PROPERTY_LAT_LNG = 0
@@ -58,7 +58,8 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         return latlng;
     }
 
-    private function computeSunset(latlng) {
+    // This may throw LocalTime.NoSunrise or LocalTime.NoSunset
+    private function computeSunset(latlng) as Time.Moment {
         // Compute today
         var today = Time.today();
         if (TEST_TODAY_OFFSET != 0) {
@@ -81,11 +82,6 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 
         var secondsAfterMidnight = LocalTime.sunset(
             year, month, day, latlng[0], latlng[1], timeZoneOffset, zenith);
-
-        if (secondsAfterMidnight < 0) {
-            // Negative numbrers represent exceptional cases
-            return secondsAfterMidnight;
-        }
 
         return today.add(new Time.Duration(secondsAfterMidnight));
     }
@@ -112,7 +108,15 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
                 return WatchUi.loadResource(Rez.Strings.no_gps);
             }
 
-            sunset = computeSunset(latlng);
+            try {
+                sunset = self.computeSunset(latlng);
+            } catch (ex instanceof LocalTime.NoSunrise) {
+                DEBUG("Sunrise does not occur at this location");
+                return WatchUi.loadResource(Rez.Strings.no_sunrise);
+            } catch (ex instanceof LocalTime.NoSunset) {
+                DEBUG("Sunset does not occur at this location");
+                return WatchUi.loadResource(Rez.Strings.no_sunset);
+            }
 
             // We only want to cache the sunset if we're using current GPS
             // coordinates, not cached. This is because we want to keep polling
@@ -120,18 +124,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
             if (!usingGPSCache) {
                 var app = Application.getApp();
                 app.mSunset = sunset;
-
-                // N.B: The parser doesn't like this statement, so it has to be broken up into a temporary variable in order to compile
-                //Application.getApp().mSunset = sunset;
             }
-        }
-
-        if (sunset == LocalTime.NO_SUNSET) {
-            DEBUG("Sunset does not occur at this location");
-            return WatchUi.loadResource(Rez.Strings.no_sunset);
-        }  else if (sunset == LocalTime.NO_SUNRISE) {
-            DEBUG("Sunrise does not occur at this location");
-            return WatchUi.loadResource(Rez.Strings.no_sunrise);
         }
 
         var now = Time.now();

@@ -1,2 +1,7 @@
 - Use Application.Storage instead of Properties
 - Add support for new devices
+- Better screenshots
+    - Show field on an actual device
+    - Show setting being toggled on ConnectIQ app
+        - PNG
+        - Also Animated GIF showing steps?

@@ -10,9 +10,22 @@ module LocalTime {
 
     const DEBUG_MODE = false;
 
-    enum {
-        NO_SUNRISE = -1,
-        NO_SUNSET = -2
+    class NoSunrise extends Exception {
+
+        function initialize(msg as String) {
+            Exception.initialize();
+            self.mMessage = msg;
+        }
+
+    }
+
+    class NoSunset extends Exception {
+
+        function initialize(msg as String) {
+            Exception.initialize();
+            self.mMessage = msg;
+        }
+
     }
 
     // These values used to determine the definition of sunrise and sunset
@@ -32,22 +45,23 @@ module LocalTime {
         }
     }
 
-    function sunrise(year, month, day, latitude, longitude, timeZoneOffset, zenith) {
+    function sunrise(year, month, day, latitude, longitude, timeZoneOffset, zenith) as Number {
         return sunEvent(
             :sunrise, year, month, day, latitude, longitude, timeZoneOffset, zenith);
     }
 
-    function sunset(year, month, day, latitude, longitude, timeZoneOffset, zenith) {
+    function sunset(year, month, day, latitude, longitude, timeZoneOffset, zenith) as Number {
         return sunEvent(
             :sunset, year, month, day, latitude, longitude, timeZoneOffset, zenith);
     }
 
-    // Returns a Number of secs from midnight for sunrise or sunset (or null
-    // if no sunrise or sunset at this location)
+    // Returns a Number of secs from midnight for sunrise or sunset
     //
-    // Source http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
-    function sunEvent(event, year, month, day, latitude, longitude,
-                             timeZoneOffset, zenith) {
+    // Throws NoSunrise or NoSunset if this location doesn't have a sunrise or a
+    // sunset this day (land of the midnight sun)
+    //
+    // Source https://web.archive.org/web/20160315083337/http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
+    function sunEvent(event, year, month, day, latitude, longitude, timeZoneOffset, zenith) as Number {
         var localOffset = timeZoneOffset / 3600.0;
 
         //! 1. first calculate the day of the year
@@ -102,9 +116,9 @@ module LocalTime {
         var cosH = (MathExtra.cosD(zenith) - (sinDec * MathExtra.sinD(latitude))) / (cosDec * MathExtra.cosD(latitude));
         DEBUG("cosH = " + cosH);
         if (cosH >  1) {
-            return NO_SUNSET;
+            throw new NoSunset("no sunset at this location");
         } else if (cosH < -1) {
-            return NO_SUNRISE;
+            throw new NoSunrise("no sunrise at this location");
         }
 
         //! 7b. finish calculating H and convert into hours
