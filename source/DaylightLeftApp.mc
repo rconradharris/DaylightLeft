@@ -18,6 +18,7 @@ class DaylightLeftApp extends Application.AppBase {
     function onSettingsChanged() {
         // Recompute sunset if settings changed...
         mSunset = null;
+        Settings.invalidateCache();
     }
 
     function getInitialView() {

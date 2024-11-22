@@ -5,6 +5,7 @@ using Toybox.Time;
 using MathExtra;
 
 module LocalTime {
+
     enum {
         NO_SUNRISE = -1,
         NO_SUNSET = -2

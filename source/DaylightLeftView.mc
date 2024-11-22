@@ -11,17 +11,10 @@ using LocalTime;
 using MathExtra;
 
 class DaylightLeftView extends WatchUi.SimpleDataField {
+
     enum {
         PROPERTY_LAT_LNG = 0
     }
-
-    enum {
-        ZENITH_OFFICIAL = 0,
-        ZENITH_CIVIL = 1,
-        ZENITH_NAUTICAL = 2,
-        ZENITH_ASTRONOMICAL = 3
-    }
-
 
     private const TEST_LAT_LNG = null;
     //private const TEST_LAT_LNG = [30.25, -97.75];      // Austin, TX
@@ -36,19 +29,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 
     function initialize() {
         WatchUi.SimpleDataField.initialize();
-        label = WatchUi.loadResource(Rez.Strings.label);
-    }
-
-    private function getZenith() {
-        var zenith = Application.getApp().getProperty("zenith");
-        if (zenith == ZENITH_CIVIL) {
-            return LocalTime.ZENITH_CIVIL;
-        } else if (zenith == ZENITH_NAUTICAL) {
-            return LocalTime.ZENITH_NAUTICAL;
-        } else if (zenith == ZENITH_ASTRONOMICAL) {
-            return LocalTime.ZENITH_ASTRONOMICAL;
-        }
-        return LocalTime.ZENITH_OFFICIAL;
+       label = WatchUi.loadResource(Rez.Strings.label);
     }
 
     private function getLatLng(info) {
@@ -81,7 +62,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 
         //System.println(Lang.format("Timezone offset is $1$", [timeZoneOffset]));
 
-        var zenith = getZenith();
+        var zenith = Settings.getZenith();
         //System.println("Using zenith " + zenith);
 
         var secondsAfterMidnight = LocalTime.sunset(
