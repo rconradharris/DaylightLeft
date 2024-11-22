@@ -35,7 +35,7 @@ module LocalTime {
     // if no sunrise or sunset at this location)
     //
     // Source http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
-    hidden function sunEvent(event, year, month, day, latitude, longitude,
+    function sunEvent(event, year, month, day, latitude, longitude,
                              timeZoneOffset, zenith) {
         var localOffset = timeZoneOffset / 3600.0;
 

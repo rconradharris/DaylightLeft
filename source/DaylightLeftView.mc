@@ -1,3 +1,6 @@
+import Toybox.Lang;
+
+using Toybox.Activity;
 using Toybox.Application;
 using Toybox.Lang;
 using Toybox.System;
@@ -25,10 +28,10 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
     //hidden const TEST_LAT_LNG = [90.0, 0];            // North Pole
     //hidden const TEST_LAT_LNG = [-90.0, 0];           // South Pole
 
-    hidden const TEST_TODAY_OFFSET = null;
+    hidden const TEST_TODAY_OFFSET as Number = 0;
     //hidden const TEST_TODAY_OFFSET = -1;
 
-    hidden const TEST_NOW_OFFSET = null;
+    hidden const TEST_NOW_OFFSET as Number = 0;
     //hidden const TEST_NOW_OFFSET = -6 * 3600;
 
     function initialize() {
@@ -55,7 +58,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
             latlng = TEST_LAT_LNG;
         } else if (info.currentLocation != null) {
             // 2. Real GPS coords
-           latlng = info.currentLocation.toDegrees();
+            latlng = info.currentLocation.toDegrees();
         }
         return latlng;
     }
@@ -63,7 +66,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
     hidden function computeSunset(latlng) {
         // Compute today
         var today = Time.today();
-        if (TEST_TODAY_OFFSET != null) {
+        if (TEST_TODAY_OFFSET != 0) {
             today = today.add(new Time.Duration(TEST_TODAY_OFFSET * 86400));
         }
 
@@ -101,7 +104,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         return today.add(new Time.Duration(secondsAfterMidnight));
     }
 
-    function compute(info) {
+    function compute(info as Activity.Info) as Lang.Numeric or Time.Duration or Lang.String or Null {
         var sunset = Application.getApp().mSunset;
         var usingGPSCache = false;
 
@@ -146,7 +149,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         }
 
         var now = Time.now();
-        if (TEST_NOW_OFFSET != null) {
+        if (TEST_NOW_OFFSET != 0) {
             now = now.add(new Time.Duration(TEST_NOW_OFFSET));
         }
 

@@ -1,0 +1,5 @@
+- Add debug logs
+    - Use (:debug)
+- Use Application.Storage instead of Properties
+- Switch 'hidden' to 'private'
+- Add support for new devices
