@@ -8,6 +8,7 @@ using Toybox.System;
 using Toybox.Time;
 using Toybox.WatchUi;
 
+using Compat.LocalDate;
 using LocalTime;
 using MathExtra;
 
@@ -23,9 +24,6 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
     //private const TEST_LAT_LNG = [30.25, -97.75];      // Austin, TX
     //private const TEST_LAT_LNG = [90.0, 0];            // North Pole
     //private const TEST_LAT_LNG = [-90.0, 0];           // South Pole
-
-    private const TEST_TODAY_OFFSET as Number = 0;
-    //private const TEST_TODAY_OFFSET = -1;
 
     private const TEST_NOW_OFFSET as Number = 0;
     //private const TEST_NOW_OFFSET = -6 * 3600;
@@ -65,16 +63,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 
     // This may throw LocalTime.NoSunrise or LocalTime.NoSunset
     private function computeSunset(loc as Position.Location) as Time.Moment {
-        // Compute today
-        var today = Time.today();
-        if (TEST_TODAY_OFFSET != 0) {
-            today = today.add(new Time.Duration(TEST_TODAY_OFFSET * 86400));
-        }
-
-        var gToday = Time.Gregorian.info(today, Time.FORMAT_SHORT);
-        var year = gToday.year;
-        var month = gToday.month;
-        var day = gToday.day;
+        var date = LocalDate.hereToday();
 
         var deg = loc.toDegrees();
         var lat = deg[0];
@@ -82,15 +71,12 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 
         DEBUGF("Lat/Lng is [$1$, $2$]", [lat, lng]);
 
-        var timeZoneOffset = System.getClockTime().timeZoneOffset;
-
-        DEBUGF("Timezone offset is $1$", [timeZoneOffset]);
-
         var zenith = Settings.getZenith();
         DEBUG("Using zenith " + zenith);
 
-        var secondsAfterMidnight = LocalTime.sunset(year, month, day, loc, timeZoneOffset, zenith);
+        var secondsAfterMidnight = LocalTime.sunset(date, loc, zenith);
 
+        var today = Time.today();
         return today.add(new Time.Duration(secondsAfterMidnight));
     }
 

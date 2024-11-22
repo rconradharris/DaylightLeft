@@ -5,6 +5,7 @@ using Toybox.Position;
 using Toybox.System;
 using Toybox.Time;
 
+using Compat.LocalDate;
 using MathExtra;
 
 module LocalTime {
@@ -46,12 +47,12 @@ module LocalTime {
         }
     }
 
-    function sunrise(year, month, day, loc as Position.Location, timeZoneOffset, zenith) as Number {
-        return _sunEvent(:sunrise, year, month, day, loc, timeZoneOffset, zenith);
+    function sunrise(date as LocalDate.Date, loc as Position.Location, zenith) as Number {
+        return _sunEvent(:sunrise, date, loc, zenith);
     }
 
-    function sunset(year, month, day, loc as Position.Location, timeZoneOffset, zenith) as Number {
-        return _sunEvent(:sunset, year, month, day, loc, timeZoneOffset, zenith);
+    function sunset(date as LocalDate.Date, loc as Position.Location, zenith) as Number {
+        return _sunEvent(:sunset, date, loc, zenith);
     }
 
     // Returns a Number of secs from midnight for sunrise or sunset
@@ -60,7 +61,12 @@ module LocalTime {
     // sunset this day (land of the midnight sun)
     //
     // Source https://web.archive.org/web/20160315083337/http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
-    function _sunEvent(event, year, month, day, loc as Position.Location, timeZoneOffset, zenith) as Number {
+    function _sunEvent(event, date as LocalDate.Date, loc as Position.Location, zenith) as Number {
+        var year = date.year;
+        var month = date.month;
+        var day = date.day;
+        var timeZoneOffset = date.timeZoneOffset;
+
         var deg = loc.toDegrees();
         var latDeg = deg[0];
         var lngDeg = deg[1];
