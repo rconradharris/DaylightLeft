@@ -3,6 +3,7 @@ import Toybox.Lang;
 using Toybox.Activity;
 using Toybox.Application;
 using Toybox.Lang;
+using Toybox.Position;
 using Toybox.System;
 using Toybox.Time;
 using Toybox.WatchUi;
@@ -18,7 +19,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         PROPERTY_LAT_LNG = 0
     }
 
-    private const TEST_LAT_LNG = null;
+    private const TEST_LAT_LNG = [];
     //private const TEST_LAT_LNG = [30.25, -97.75];      // Austin, TX
     //private const TEST_LAT_LNG = [90.0, 0];            // North Pole
     //private const TEST_LAT_LNG = [-90.0, 0];           // South Pole
@@ -46,20 +47,24 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         }
     }
 
-    private function getLatLng(info) {
-        var latlng = null;
-        if (TEST_LAT_LNG != null) {
-            // 1. Test data
-            latlng = TEST_LAT_LNG;
-        } else if (info.currentLocation != null) {
-            // 2. Real GPS coords
-            latlng = info.currentLocation.toDegrees();
+    private function getLocation(info as Activity.Info) as Position.Location? {
+        if (self.TEST_LAT_LNG.size() > 0) {
+            return new Position.Location({
+                :latitude   => self.TEST_LAT_LNG[0],
+                :longitude  => self.TEST_LAT_LNG[1],
+                :format     => :degrees
+            });
         }
-        return latlng;
+
+        if (info.currentLocation != null) {
+            return info.currentLocation;
+        }
+
+        return null;
     }
 
     // This may throw LocalTime.NoSunrise or LocalTime.NoSunset
-    private function computeSunset(latlng) as Time.Moment {
+    private function computeSunset(loc as Position.Location) as Time.Moment {
         // Compute today
         var today = Time.today();
         if (TEST_TODAY_OFFSET != 0) {
@@ -71,7 +76,11 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         var month = gToday.month;
         var day = gToday.day;
 
-        DEBUGF("Lat/Lng is [$1$, $2$]", latlng);
+        var deg = loc.toDegrees();
+        var lat = deg[0];
+        var lng = deg[1];
+
+        DEBUGF("Lat/Lng is [$1$, $2$]", [lat, lng]);
 
         var timeZoneOffset = System.getClockTime().timeZoneOffset;
 
@@ -80,10 +89,28 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         var zenith = Settings.getZenith();
         DEBUG("Using zenith " + zenith);
 
-        var secondsAfterMidnight = LocalTime.sunset(
-            year, month, day, latlng[0], latlng[1], timeZoneOffset, zenith);
+        var secondsAfterMidnight = LocalTime.sunset(year, month, day, loc, timeZoneOffset, zenith);
 
         return today.add(new Time.Duration(secondsAfterMidnight));
+    }
+
+    private function getCachedLocation() as Position.Location? {
+        var latLngDeg = Application.getApp().getProperty(PROPERTY_LAT_LNG);
+        if (latLngDeg == null) {
+            return null;
+        }
+
+        DEBUGF("Using cached coordinates $1$", latLngDeg);
+        return new Position.Location({
+            :latitude   => latLngDeg[0],
+            :longitude  => latLngDeg[1],
+            :format     => :degrees
+        });
+    }
+
+    private function setCachedLocation(loc as Position.Location) as Void {
+        var latLngDeg = loc.toDegrees();
+        Application.getApp().setProperty(PROPERTY_LAT_LNG, latLngDeg);
     }
 
     function compute(info as Activity.Info) as Lang.Numeric or Time.Duration or Lang.String or Null {
@@ -91,25 +118,23 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         var usingGPSCache = false;
 
         if (sunset == null) {
+            var loc = self.getLocation(info);
 
-            var latlng = getLatLng(info);
-
-            if (latlng == null) {
+            if (loc == null) {
                 usingGPSCache = true;
-                latlng = Application.getApp().getProperty(PROPERTY_LAT_LNG);
-                DEBUG("Using cached coordinates " + latlng);
+                loc = self.getCachedLocation();
             } else {
-                DEBUG("Using real coordinates " + latlng);
-                Application.getApp().setProperty(PROPERTY_LAT_LNG, latlng);
+                DEBUGF("Using real coordinates $1$", loc.toDegrees());
+                self.setCachedLocation(loc);
             }
 
-            if (latlng == null) {
+            if (loc == null) {
                 DEBUG("Unable to compute sunset without GPS");
                 return WatchUi.loadResource(Rez.Strings.no_gps);
             }
 
             try {
-                sunset = self.computeSunset(latlng);
+                sunset = self.computeSunset(loc);
             } catch (ex instanceof LocalTime.NoSunrise) {
                 DEBUG("Sunrise does not occur at this location");
                 return WatchUi.loadResource(Rez.Strings.no_sunrise);

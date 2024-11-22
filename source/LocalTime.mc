@@ -1,6 +1,7 @@
 import Toybox.Lang;
 
 using Toybox.Math;
+using Toybox.Position;
 using Toybox.System;
 using Toybox.Time;
 
@@ -45,14 +46,12 @@ module LocalTime {
         }
     }
 
-    function sunrise(year, month, day, latitude, longitude, timeZoneOffset, zenith) as Number {
-        return sunEvent(
-            :sunrise, year, month, day, latitude, longitude, timeZoneOffset, zenith);
+    function sunrise(year, month, day, loc as Position.Location, timeZoneOffset, zenith) as Number {
+        return _sunEvent(:sunrise, year, month, day, loc, timeZoneOffset, zenith);
     }
 
-    function sunset(year, month, day, latitude, longitude, timeZoneOffset, zenith) as Number {
-        return sunEvent(
-            :sunset, year, month, day, latitude, longitude, timeZoneOffset, zenith);
+    function sunset(year, month, day, loc as Position.Location, timeZoneOffset, zenith) as Number {
+        return _sunEvent(:sunset, year, month, day, loc, timeZoneOffset, zenith);
     }
 
     // Returns a Number of secs from midnight for sunrise or sunset
@@ -61,7 +60,11 @@ module LocalTime {
     // sunset this day (land of the midnight sun)
     //
     // Source https://web.archive.org/web/20160315083337/http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
-    function sunEvent(event, year, month, day, latitude, longitude, timeZoneOffset, zenith) as Number {
+    function _sunEvent(event, year, month, day, loc as Position.Location, timeZoneOffset, zenith) as Number {
+        var deg = loc.toDegrees();
+        var latDeg = deg[0];
+        var lngDeg = deg[1];
+
         var localOffset = timeZoneOffset / 3600.0;
 
         //! 1. first calculate the day of the year
@@ -72,7 +75,7 @@ module LocalTime {
         DEBUG("N = " + N);
 
         //! 2. convert the longitude to hour value and calculate an approximate time
-        var lngHour = longitude / 15.0;
+        var lngHour = lngDeg / 15.0;
         var t = -1.0;
         if (event == :sunrise) {
             t = N + ((6.0 - lngHour) / 24.0);
@@ -113,7 +116,7 @@ module LocalTime {
         DEBUG("sinDec = " + sinDec + " cosDec = " + cosDec);
 
         //! 7a. calculate the Sun's local hour angle
-        var cosH = (MathExtra.cosD(zenith) - (sinDec * MathExtra.sinD(latitude))) / (cosDec * MathExtra.cosD(latitude));
+        var cosH = (MathExtra.cosD(zenith) - (sinDec * MathExtra.sinD(latDeg))) / (cosDec * MathExtra.cosD(latDeg));
         DEBUG("cosH = " + cosH);
         if (cosH >  1) {
             throw new NoSunset("no sunset at this location");
