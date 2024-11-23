@@ -1,5 +1,3 @@
-- LocalTime.sunset should return Time.Moment
-- Use Application.Storage instead of Properties
 - Add support for new devices
 - Better screenshots
     - Show field on an actual device
