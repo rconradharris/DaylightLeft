@@ -9,7 +9,7 @@ using Toybox.Time;
 using Toybox.WatchUi;
 
 using Compat.LocalDate;
-using LocalTime;
+using Sun;
 using MathExtra;
 
 class DaylightLeftView extends WatchUi.SimpleDataField {
@@ -61,7 +61,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         return null;
     }
 
-    // This may throw LocalTime.NoSunrise or LocalTime.NoSunset
+    // This may throw Sun.NoSunrise or Sun.NoSunset
     private function computeSunset(loc as Position.Location) as Time.Moment {
         var date = LocalDate.hereToday();
 
@@ -74,7 +74,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         var zenith = Settings.getZenith();
         DEBUG("Using zenith " + zenith);
 
-        return LocalTime.sunset(date, loc, zenith);
+        return Sun.setsAt(date, loc, zenith);
     }
 
     private function getCachedLocation() as Position.Location? {
@@ -118,10 +118,10 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 
             try {
                 sunset = self.computeSunset(loc);
-            } catch (ex instanceof LocalTime.NoSunrise) {
+            } catch (ex instanceof Sun.NoSunrise) {
                 DEBUG("Sunrise does not occur at this location");
                 return WatchUi.loadResource(Rez.Strings.no_sunrise);
-            } catch (ex instanceof LocalTime.NoSunset) {
+            } catch (ex instanceof Sun.NoSunset) {
                 DEBUG("Sunset does not occur at this location");
                 return WatchUi.loadResource(Rez.Strings.no_sunset);
             }

@@ -9,9 +9,14 @@ using Compat.LocalDate;
 using MathExtra;
 using Utils;
 
-module LocalTime {
+module Sun {
 
     const DEBUG_MODE = false;
+
+    enum SunEvent {
+        SUN_RISE,
+        SUN_SET,
+    }
 
     class NoSunrise extends Exception {
 
@@ -54,12 +59,12 @@ module LocalTime {
         }
     }
 
-    function sunrise(date as LocalDate.Date, loc as Position.Location, zenith) as Time.Moment {
-        return _sunEvent(:sunrise, date, loc, zenith);
+    function risesAt(date as LocalDate.Date, loc as Position.Location, zenith as Float) as Time.Moment {
+        return _sunEvent(SUN_RISE, date, loc, zenith);
     }
 
-    function sunset(date as LocalDate.Date, loc as Position.Location, zenith) as Time.Moment {
-        return _sunEvent(:sunset, date, loc, zenith);
+    function setsAt(date as LocalDate.Date, loc as Position.Location, zenith as Float) as Time.Moment {
+        return _sunEvent(SUN_SET, date, loc, zenith);
     }
 
     // Return a Moment representing sunrise or sunset for a given date.
@@ -68,7 +73,7 @@ module LocalTime {
     // sunset this day (land of the midnight sun)
     //
     // Source https://web.archive.org/web/20160315083337/http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
-    function _sunEvent(event, date as LocalDate.Date, loc as Position.Location, zenith) as Time.Moment {
+    function _sunEvent(event as SunEvent, date as LocalDate.Date, loc as Position.Location, zenith as Float) as Time.Moment {
         var year = date.year;
         var month = date.month;
         var day = date.day;
@@ -90,7 +95,7 @@ module LocalTime {
         //! 2. convert the longitude to hour value and calculate an approximate time
         var lngHour = lngDeg / 15.0;
         var t = -1.0;
-        if (event == :sunrise) {
+        if (event == SUN_RISE) {
             t = N + ((6.0 - lngHour) / 24.0);
         } else {
             t = N + ((18.0 - lngHour) / 24.0);
@@ -139,7 +144,7 @@ module LocalTime {
 
         //! 7b. finish calculating H and convert into hours
         var H = -1.0;
-        if (event == :sunrise) {
+        if (event == SUN_RISE) {
             H = 360 - MathExtra.acosD(cosH);
         } else {
             H = MathExtra.acosD(cosH);

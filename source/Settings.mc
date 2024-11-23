@@ -22,12 +22,12 @@ module Settings {
         var zenith = self._getCachedProperty(SETTING_ZENITH);
 
         switch (zenith) {
-        case ZENITH_CIVIL:          return LocalTime.ZENITH_CIVIL;
-        case ZENITH_NAUTICAL:       return LocalTime.ZENITH_NAUTICAL;
-        case ZENITH_ASTRONOMICAL:   return LocalTime.ZENITH_ASTRONOMICAL;
+        case ZENITH_CIVIL:          return Sun.ZENITH_CIVIL;
+        case ZENITH_NAUTICAL:       return Sun.ZENITH_NAUTICAL;
+        case ZENITH_ASTRONOMICAL:   return Sun.ZENITH_ASTRONOMICAL;
         }
 
-        return LocalTime.ZENITH_OFFICIAL;
+        return Sun.ZENITH_OFFICIAL;
     }
 
     function _getCachedProperty(key as Application.PropertyKeyType) as Application.PropertyValueType {
