@@ -14,7 +14,7 @@ using MathExtra;
 
 class DaylightLeftView extends WatchUi.SimpleDataField {
 
-    private const DEBUG_MODE = true;
+    private const DEBUG_MODE = false;
 
     enum {
         PROPERTY_LAT_LNG = 0
@@ -74,10 +74,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         var zenith = Settings.getZenith();
         DEBUG("Using zenith " + zenith);
 
-        var secondsAfterMidnight = LocalTime.sunset(date, loc, zenith);
-
-        var today = Time.today();
-        return today.add(new Time.Duration(secondsAfterMidnight));
+        return LocalTime.sunset(date, loc, zenith);
     }
 
     private function getCachedLocation() as Position.Location? {

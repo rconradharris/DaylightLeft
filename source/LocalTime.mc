@@ -7,6 +7,7 @@ using Toybox.Time;
 
 using Compat.LocalDate;
 using MathExtra;
+using Utils;
 
 module LocalTime {
 
@@ -47,21 +48,27 @@ module LocalTime {
         }
     }
 
-    function sunrise(date as LocalDate.Date, loc as Position.Location, zenith) as Number {
+    function DEBUGF(format as String, params as Array) as Void {
+        if (self.DEBUG_MODE) {
+            PRINTF(format, params);
+        }
+    }
+
+    function sunrise(date as LocalDate.Date, loc as Position.Location, zenith) as Time.Moment {
         return _sunEvent(:sunrise, date, loc, zenith);
     }
 
-    function sunset(date as LocalDate.Date, loc as Position.Location, zenith) as Number {
+    function sunset(date as LocalDate.Date, loc as Position.Location, zenith) as Time.Moment {
         return _sunEvent(:sunset, date, loc, zenith);
     }
 
-    // Returns a Number of secs from midnight for sunrise or sunset
+    // Return a Moment representing sunrise or sunset for a given date.
     //
     // Throws NoSunrise or NoSunset if this location doesn't have a sunrise or a
     // sunset this day (land of the midnight sun)
     //
     // Source https://web.archive.org/web/20160315083337/http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
-    function _sunEvent(event, date as LocalDate.Date, loc as Position.Location, zenith) as Number {
+    function _sunEvent(event, date as LocalDate.Date, loc as Position.Location, zenith) as Time.Moment {
         var year = date.year;
         var month = date.month;
         var day = date.day;
@@ -159,6 +166,14 @@ module LocalTime {
         var localTS = localT * 3600;
         DEBUG("localTS = " + localTS);
 
-        return localTS.toNumber();
+        var secsAfterMidnight = localTS.toNumber();
+
+        //! 12. Convert to a Moment
+        var midnight = date.midnight();
+        var sunset = midnight.add(new Time.Duration(secsAfterMidnight));
+        DEBUGF("sunset: $1$", [Utils.Time.iso8601(sunset)]);
+
+        return sunset;
     }
+
 }
