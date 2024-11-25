@@ -1,5 +1,7 @@
 # Daylight Left
 
+![Daylight Left on a Forerunner 955](https://github.com/rconradharris/DaylightLeft/blob/master/assets/images/Forerunner955.jpeg)
+
 Daylight Left is a data field for Garmin watches and bike computers that shows
 how much light is left in the day.
 
@@ -10,6 +12,8 @@ Daylight Left is available in the Garmin [ConnectIQ
 Store](https://apps.garmin.com/en-US/apps/0a593392-4ea8-4963-9b9f-2c464338e87b)
 
 ## Settings
+
+![Settings on Phone](https://github.com/rconradharris/DaylightLeft/blob/master/assets/images/Settings%20GIF/Frames/Settings.jpeg)
 
 By default, Daylight Left will use sunset as its reference point. However, in
 practice, there's plenty of usable daylight left immediately after sunset.
