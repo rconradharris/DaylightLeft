@@ -58,9 +58,10 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
 
     private function getLocation(info as Activity.Info) as Position.Location? {
         if (self.TEST_LAT_LNG.size() > 0) {
+            var x = self.TEST_LAT_LNG as [Double, Double];
             return new Position.Location({
-                :latitude   => self.TEST_LAT_LNG[0],
-                :longitude  => self.TEST_LAT_LNG[1],
+                :latitude   => x[0],
+                :longitude  => x[1],
                 :format     => :degrees
             });
         }
