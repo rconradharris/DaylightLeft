@@ -58,7 +58,7 @@ module Compat {
 
                 var localMidnight = utcMidnight.subtract(new Time.Duration(self.timeZoneOffset));
 
-                DEBUGF("LocalDate: localMidnight: $1$", [Utils.Time.iso8601(localMidnight)]);
+                DEBUGF("LocalDate: localMidnight: $1$", [Utils.Time.format(localMidnight, Utils.Time.FORMAT_ISO_8601)]);
                 return localMidnight;
             }
         }

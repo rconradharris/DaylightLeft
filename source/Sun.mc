@@ -59,21 +59,26 @@ module Sun {
         }
     }
 
-    function risesAt(date as LocalDate.Date, loc as Position.Location, zenith as Float) as Time.Moment {
+    function risesAt(date as LocalDate.Date, loc as Position.Location, zenith as Float) as Number {
         return _sunEvent(SUN_RISE, date, loc, zenith);
     }
 
-    function setsAt(date as LocalDate.Date, loc as Position.Location, zenith as Float) as Time.Moment {
+    function setsAt(date as LocalDate.Date, loc as Position.Location, zenith as Float) as Number {
         return _sunEvent(SUN_SET, date, loc, zenith);
     }
 
-    // Return a Moment representing sunrise or sunset for a given date.
+    // Returns the number of seconds after midnight of the given date at which
+    // the sun will wither rise or set using the zenith as a reference.
+    //
+    // Returning a Time.Moment would be sensible, but that introduces more
+    // timezone conversion code into this module and I'd rather handle that all
+    // at once when returning the daylight left to the user.
     //
     // Throws NoSunrise or NoSunset if this location doesn't have a sunrise or a
     // sunset this day (land of the midnight sun)
     //
     // Source https://web.archive.org/web/20160315083337/http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
-    function _sunEvent(event as SunEvent, date as LocalDate.Date, loc as Position.Location, zenith as Float) as Time.Moment {
+    function _sunEvent(event as SunEvent, date as LocalDate.Date, loc as Position.Location, zenith as Float) as Number {
         var year = date.year;
         var month = date.month;
         var day = date.day;
@@ -172,13 +177,7 @@ module Sun {
         DEBUG("localTS = " + localTS);
 
         var secsAfterMidnight = localTS.toNumber();
-
-        //! 12. Convert to a Moment
-        var midnight = date.midnight();
-        var sunset = midnight.add(new Time.Duration(secsAfterMidnight));
-        DEBUGF("sunset: $1$", [Utils.Time.iso8601(sunset)]);
-
-        return sunset;
+        return secsAfterMidnight;
     }
 
 }

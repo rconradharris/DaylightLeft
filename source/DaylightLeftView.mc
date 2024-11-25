@@ -25,7 +25,7 @@ class NoGPS extends Exception {
 
 class DaylightLeftView extends WatchUi.SimpleDataField {
 
-    private const DEBUG_MODE = false;
+    private const DEBUG_MODE = true;
 
     enum {
         PROPERTY_LAT_LNG = 0
@@ -85,7 +85,12 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         var zenith = Settings.getZenith();
         DEBUG("Using zenith " + zenith);
 
-        return Sun.setsAt(date, loc, zenith);
+        var secsAfterMidnight = Sun.setsAt(date, loc, zenith);
+
+        var today = Time.today();
+        var sunset = today.add(new Time.Duration(secsAfterMidnight));
+        DEBUGF("sunset computed to be $1$", [Utils.Time.format(sunset, Utils.Time.FORMAT_ISO_8601)]);
+        return sunset;
     }
 
     private function getCachedLocation() as Position.Location? {
