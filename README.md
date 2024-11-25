@@ -20,8 +20,8 @@ practice, there's plenty of usable daylight left immediately after sunset.
 
 To account for that, Daylight Left includes a setting, togglable from the
 ConnectIQ app on your phone, that allow you to use 'Twilight' and 'Dark' as
-reference points. These settings map to "civil" and "astronomical" sunsets,
-which interestingly, have precise definitions based on how far below the
+reference points. These settings map to "civil" and "astronomical" sunsets
+which, interestingly, have precise definitions based on how far below the
 horizon the sun is.
 
 ## Technical Details
