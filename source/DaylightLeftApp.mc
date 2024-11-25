@@ -1,10 +1,15 @@
+import Toybox.Lang;
+
 using Toybox.Application;
+using Toybox.Time;
 
 class DaylightLeftApp extends Application.AppBase {
-    var mSunset = null;
+
+    private var mSunset as Time.Moment? = null;
 
     function initialize() {
         Application.AppBase.initialize();
+        self.mSunset = null;
     }
 
     function onStart(state) {
@@ -17,8 +22,17 @@ class DaylightLeftApp extends Application.AppBase {
 
     function onSettingsChanged() {
         // Recompute sunset if settings changed...
-        mSunset = null;
+        self.mSunset = null;
+
         Settings.invalidateCache();
+    }
+
+    function setCachedSunset(m as Time.Moment) as Void {
+        self.mSunset = m;
+    }
+
+    function getCachedSunset() as Time.Moment? {
+        return self.mSunset;
     }
 
     function getInitialView() {

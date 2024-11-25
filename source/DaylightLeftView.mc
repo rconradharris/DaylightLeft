@@ -115,8 +115,8 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
     // Throws NoGPS, NoSunrise and NoSunset
     private function getCachedSunset(info as Activity.Info, midnight as Time.Moment) as Time.Moment {
         var app = Application.getApp();
-        var sunset = app.mSunset;
 
+        var sunset = app.getCachedSunset();
         if (sunset != null) {
             return sunset;
         }
@@ -148,7 +148,7 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
         // keep polling for real coordinates in case they weren't immediately
         // available
         if (gpsFix) {
-            app.mSunset = sunset;
+            app.setCachedSunset(sunset);
         }
 
         return sunset;
