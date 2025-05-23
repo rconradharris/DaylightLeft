@@ -131,7 +131,9 @@ class DaylightLeftView extends WatchUi.SimpleDataField {
             // case, we still want to show a reasonable value, so we cache the
             // last known location and use that until we get a real GPS fix
             loc = self.getCachedLocation();
-            DEBUGF("Using cached coordinates $1$", [loc.toDegrees()]);
+            if (loc != null) {
+                DEBUGF("Using cached coordinates $1$", [loc.toDegrees()]);
+            }
         } else {
             DEBUGF("Using GPS coordinates $1$", [loc.toDegrees()]);
             gpsFix = true;
