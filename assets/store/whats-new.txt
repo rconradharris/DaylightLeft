@@ -1,3 +1,4 @@
+2.4 Support Forerunner 570 and 970 and more, plus bug fixes
 2.3 Support Fenix 8, Forerunner 165 / 265 / 965, Vivoactive 5 and many more
 2.2 Support more devices
 2.1 Support Fenix 6, Forerunner 245 / 945, Vivoactive 4 and more
